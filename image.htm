@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Image</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Image</h1>
+<code>Image(<b>string</b> file [, <b>float</b> x [, <b>float</b> y [, <b>float</b> w [, <b>float</b> h [, <b>string</b> type [, <b>mixed</b> link]]]]]])</code>
+<h2>설명</h2>
+페이지에 이미지를 출력합니다. 좌측 상단의 좌표는 반드시 입력해야 하며 입력할 때 몇가지 다른
+방식으로 입력할 수 있습니다.
+<UL>
+<LI>정확한 너비와 높이 (사용자 단위 사용)
+<LI>너비, 높이중 하나만 입력. 원래의 비율을 맞추기 위해 나머지 하나는 자동 계산
+<LI>입력안함. 이미지를 72dpi로 자동 출력
+</UL>
+파일 포맷은 JPEG, PNG 그리고 GIF가 지원됩니다. GIF 지원을 위해서는 GD 확장기능이 필요합니다.
+<BR>
+<BR>
+JPEG는 다음을 사용할 수 있습니다:
+<UL>
+<LI>그레이스케일
+<LI>트루칼라 (24 bits)
+<LI>CMYK (32 bits)
+</UL>
+PNG는 다음을 사용할 수 있습니다:
+<UL>
+<LI>8bits (256 단계) 그레이 스케일
+<LI>팔레트 색상(indexed colors)
+<LI>트루 칼라 (24 bits)
+</UL>
+하지만, 다음은 지원되지 않습니다:
+<UL>
+<LI>인터레이스
+<LI>알파 채널
+</UL>
+애니메이션 GIF는 첫번째 프레임만 사용됩니다.
+<BR>
+투명색이 정의되어있다면 투명색 정보를 입력합니다.
+<BR>
+<BR>
+포맷은 직접 입력하거나 그렇지 않을 경우엔 파일의 확장자명에서 추측합니다.
+<BR>
+이미지에 링크를 출력하는 것도 가능합니다.
+<BR>
+<BR>
+참고: 같은 이미지가 여러번 쓰인다면, 파일에는 한개의 이미지만 포합됩니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>file</code></dt>
+<dd>
+이미지 파일명
+</dd>
+<dt><code>x</code></dt>
+<dd>
+좌측 상단 꼭지점의 가로 좌표. 정의되지 않거나 <code>null</code>이면 현재의 가로 좌표가 사용됩니다.
+</dd>
+<dt><code>y</code></dt>
+<dd>
+좌측 상단 꼭지점의 세로 좌표. 정의되지 않거나 <code>null</code>이면 현재의 세로 좌표가 사용됩니다;
+추가로, 필요한 경우(자동 페이지 나눔을 사용하고 있을 때) 페이지 나눔이 먼저 실행되고
+그 후에 현재의 세로 좌표는 이미지 아래로 이동합니다.
+</dd>
+<dt><code>w</code></dt>
+<dd>
+이미지의 출력너비. 정의되지 않거나 0이라면 자동으로 계산됩니다.
+</dd>
+<dt><code>h</code></dt>
+<dd>
+이미지의 출력높이. 정의되지 않거나 0이라면 자동으로 계산됩니다.
+</dd>
+<dt><code>type</code></dt>
+<dd>
+이미지 형식. 가능한 값은 <TT>JPG</TT>, <TT>JPEG</TT>, <TT>PNG</TT> 그리고 <TT>GIF</TT> 등입니다(대소문자 구분안함).
+주어지지 않는다면, 파일의 확장자에서 추측합니다.
+</dd>
+<dt><code>link</code></dt>
+<dd>
+URL이나 AddLink() 실행 후 반환받은 고유값.
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="addlink.htm">AddLink()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

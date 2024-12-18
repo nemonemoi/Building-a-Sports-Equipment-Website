@@ -15,7 +15,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand1.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd1.png" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -24,7 +24,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand2.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd2.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -33,7 +33,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand3.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd3.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -42,7 +42,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand4.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd4.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -51,7 +51,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand5.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd5.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -60,7 +60,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand6.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd6.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -69,7 +69,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand7.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd7.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -78,7 +78,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand8.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd8.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -87,7 +87,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand9.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd9.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>
@@ -96,7 +96,7 @@
 									<div class="item">
 										<div class="single-client">
 											<a href="#">
-												<img src="assets/img/brand/brand10.png" alt="brand-client" />
+												<img src="assets/img/brand/brandd10.jpg" alt="brand-client" />
 											</a>
 										</div>									
 									</div>

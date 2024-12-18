@@ -14,22 +14,29 @@
 				<?php
 					require 'connect.php';
 					$idsp = $_GET["id"];
-					$sql = "SELECT * FROM san_pham sp
-							join loai_sp lsp on lsp.LSP_MA=sp.LSP_MA
-							where sp.SP_MA=".$idsp;
-					$result=$conn->query($sql);
-					$row=$result->fetch_assoc();
-					$maloaisp = $row["LSP_MA"];
+					$stmt = $conn->prepare("SELECT * FROM san_pham sp
+                        JOIN loai_sp lsp ON lsp.LSP_MA = sp.LSP_MA
+                        WHERE sp.SP_MA = ?");
+					$stmt->bind_param("i", $idsp);
+					$stmt->execute();
+					$result = $stmt->get_result();
+					$row = $result->fetch_assoc();
+
+
+					// $idsp = $_GET["id"];
+					// $sql = "SELECT * FROM san_pham sp
+					// 		join loai_sp lsp on lsp.LSP_MA=sp.LSP_MA
+					// 		where sp.SP_MA=".$idsp;
+					// $result=$conn->query($sql);
+					// $row=$result->fetch_assoc();
+					// $maloaisp = $row["LSP_MA"];
 				?>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<!-- BSTORE-BREADCRUMB START -->
-						<div class="bstore-breadcrumb">
-							<a href="index.php">Home<span><i class="fa fa-caret-right"></i></span></a>
-							<span> <i class="fa fa-caret-right"> </i> </span>
-							<a href="products.php"> Điện thoại </a>
-							<span> <?php echo $row["SP_TEN"]; ?> </span>
-						</div>
+						<!-- -BREADCRUMB START -->
+						 <div class="bstore-breadcrumb">
+							
+						</div> 
 						<!-- BSTORE-BREADCRUMB END -->
 					</div>
 				</div>				
@@ -62,7 +69,7 @@
 							<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
 								<div class="single-product-descirption">
 									<h2><?php echo $row["SP_TEN"]; ?></h2>
-									<div class="single-product-social-share">
+									<!-- //<div class="single-product-social-share">
 										<ul>
 											<li><a href="#" class="twi-link"><i class="fa fa-twitter"></i>Tweet</a></li>
 											<li><a href="#" class="fb-link"><i class="fa fa-facebook"></i>Share</a></li>
@@ -84,9 +91,9 @@
 										<div class="write-review">
 											<a href="#">Write a review</a>
 										</div>		
-									</div>
+									</div> -->
 									<div class="single-product-condition">
-										<p>Loại điện thoại: <span class="text-uppercase"></span><?php echo $row["LSP_TEN"]; ?></span></p>
+										<p>Phân loại: <span class="text-uppercase"></span><?php echo $row["LSP_TEN"]; ?></span></p>
 										<p>Tình trạng: <span>Mới</span></p>
 										
 										<div class="product-in-stock">
@@ -108,7 +115,7 @@
 									<div class="single-product-add-cart">
 										<!-- <a class="add-cart-text" title="Add to cart" href="#">Thêm vào giỏ hàng</a> -->
 										<input type="submit" name="submit" id="add-to-cart" class="btn btn-2" value="Thêm vào giỏ hàng" / style="background-color: #55c65e; color:white;">
-										<a href="#" style="margin-top: -1px; background-color: #55c65e" class="btn btn-info mt-n2" data-toggle="modal" data-target="#myModal">Mua ngay</a>
+										<!-- <a href="#" style="margin-top: -1px; background-color: #55c65e" class="btn btn-info mt-n2" data-toggle="modal" data-target="#myModal">Mua ngay</a> -->
 										<input type="hidden" name="acction" value="them vao gio hang" />
 										<input type="hidden" name="idsp" value="<?php echo $row["SP_MA"] ?>" />
 										
@@ -125,17 +132,17 @@
 							<div class="col-sm-12">
 								<div class="product-more-info-tab">
 									<!-- Nav tabs -->
-									<ul class="nav nav-tabs more-info-tab">
-										<li class="active"><a href="#moreinfo" data-toggle="tab">Mô tả</a></li>
-										<li><a href="#datasheet" data-toggle="tab">Thông tin cấu hình</a></li>
-										<li><a href="#review" data-toggle="tab">Đánh giá</a></li>
+									<ul class="nav nav-tabs more-info-tab" >
+										<li class="active"><a href="#moreinfo" data-toggle="tab" >Mô tả</a></li>
+										<li><a href="#datasheet" data-toggle="tab" >Thông tin sản phẩm</a></li>
+										<!-- <li><a href="#review" data-toggle="tab" >Đánh giá</a></li> -->
 									</ul>
 									  <!-- Tab panes -->
 									<div class="tab-content">
 										<div class="tab-pane active" id="moreinfo">
-											<h3 class="text-uppercase text-info">Tính năng nổi bật</h3>
+											
 											<div class="tab-description">
-												<div innerHTML><p><?php echo $row["SP_TINHNANG"]; ?></p></div>
+												<div innerHTML><p><?php echo $row["SP_MOTA"]; ?></p></div>
 											</div>
 										</div>
 										
@@ -144,41 +151,22 @@
 												<table class="table-data-sheet">			
 													<tbody>
 														<tr class="odd">
-															<td>Màn hình:</td>
-															<td><?php echo $row["SP_MANHINH"]; ?></td>
+															<td>Chất liệu:</td>
+															<td><?php echo $row["SP_CHATLIEU"]; ?></td>
 														</tr>
 														<tr class="even">
-															<td class="td-bg">Hệ điều hành:</td>
-															<td class="td-bg"><?php echo $row["SP_HDH"]; ?></td>
+															<td class="td-bg">Kích Thước:</td>
+															<td class="td-bg"><?php echo $row["SP_KICHTHUOC"]; ?></td>
 														</tr>
 														<tr class="odd">
-															<td>Camera sau:</td>
-															<td><?php echo $row["SP_CAMSAU"]; ?></td>
+															<td>Màu sắc:</td>
+															<td><?php echo $row["SP_MAUSAC"]; ?></td>
 														</tr>
 														<tr class="even">
-															<td class="td-bg">Camera trước:</td>
-															<td class="td-bg"><?php echo $row["SP_CAMTRUOC"]; ?></td>
+															<td class="td-bg">Thời gian bảo hành:</td>
+															<td class="td-bg"><?php echo $row["SP_TGBH"]; ?></td>
 														</tr>
-														<tr class="odd">
-															<td>Chip:</td>
-															<td><?php echo $row["SP_CPU"]; ?></td>
-														</tr>
-														<tr class="even">
-															<td class="td-bg">RAM:</td>
-															<td class="td-bg"><?php echo $row["SP_RAM"]; ?></td>
-														</tr>
-														<tr class="odd">
-															<td>Dung lượng lưu trữ:</td>
-															<td><?php echo $row["SP_ROOM"]; ?></td>
-														</tr>
-														<tr class="even">
-															<td class="td-bg">Sim:</td>
-															<td class="td-bg"><?php echo $row["SP_SIM"]; ?></td>
-														</tr>
-														<tr class="odd">
-															<td>Pin, sạc:</td>
-															<td><?php echo $row["SP_PIN"]; ?></td>
-														</tr>
+														
 														
 													</tbody>
 												</table>				
@@ -252,16 +240,11 @@
 						<div class="single-product-right-sidebar clearfix">
 							<h2 class="left-title">Tags </h2>
 							<div class="category-tag">
-								<a href="#">Màu vàng gold</a>
-								<a href="#">Iphone 15</a>
-								<a href="#">Bán chạy</a>
-								<a href="#">Chơi game/ Cấu hình cao</a>
-								<a href="#">Ram 6 GB</a>
-								<a href="#">Sạc siêu nhanh</a>
-								<a href="#">Pin khủng trên 5000mAh</a>
-								<a href="#">Samsung S22+</a>
-								<a href="#">Oppo reno 10</a>
-								<a href="#">Iphone 14 Pro</a>
+								<a href="#">Bóng rổ</a>
+								<a href="#">Bóng chuyền</a>
+								<a href="#">Vợt</a>
+								<a href="#">Bóng tennis</a>
+								<a href="#">Băng gối</a>
 								<a href="#">Giá rẻ</a>
 							</div>							
 						</div>	
@@ -403,25 +386,7 @@ include "footer.php";
     new WOW().init();
     </script>
 
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-    function initialize() {
-        var mapOptions = {
-            zoom: 8,
-            scrollwheel: false,
-            center: new google.maps.LatLng(35.149868, -90.046678)
-        };
-        var map = new google.maps.Map(document.getElementById('googleMap'),
-            mapOptions);
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            map: map
-        });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+    
     <!-- main js -->
     <script src="js/main.js"></script>
 

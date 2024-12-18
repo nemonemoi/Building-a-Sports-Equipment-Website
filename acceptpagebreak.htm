@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>AcceptPageBreak</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>AcceptPageBreak</h1>
+<code><b>boolean</b> AcceptPageBreak()</code>
+<h2>설명</h2>
+어디에서건 페이지 바꿈을 만나게 된다면 메소드가 호출되고 반환값에 의해 줄바꿈이 되거나
+그렇지 않게 된다. 기본적으로 구현된 메소드에는 SetAutoPageBreak() 에 의해 선택된 값이
+반환된다.
+<BR>
+이 메소드는 자동으로 호출되므로, 프로그램에서 직접 호출할 필요는 없다.
+<h2>예제</h2>
+이 메소드는 3칼럼 레이아웃을 얻기 위해 상속받은 클래스에서 다음과 같이
+오버라이드 될 수도 있습니다.
+<div class="doc-source">
+<pre><code>class PDF extends FPDF
+{
+var $col=0;
+
+function SetCol($col)
+{
+    //Move position to a column
+    $this-&gt;col=$col;
+    $x=10+$col*65;
+    $this-&gt;SetLeftMargin($x);
+    $this-&gt;SetX($x);
+}
+
+function AcceptPageBreak()
+{
+    if($this-&gt;col&lt;2)
+    {
+        //다음 칼럼으로 이동
+        $this-&gt;SetCol($this-&gt;col+1);
+        $this-&gt;SetY(10);
+        return false;
+    }
+    else
+    {
+        //첫칼럼으로 이동후 페이지 변경
+        $this-&gt;SetCol(0);
+        return true;
+    }
+}
+}
+
+$pdf=new PDF();
+$pdf-&gt;AddPage();
+$pdf-&gt;SetFont('Arial','',12);
+for($i=1;$i&lt;=300;$i++)
+    $pdf-&gt;Cell(0,5,&quot;Line $i&quot;,0,1);
+$pdf-&gt;Output();</code></pre>
+</div>
+<h2>참고</h2>
+<a href="setautopagebreak.htm">SetAutoPageBreak()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

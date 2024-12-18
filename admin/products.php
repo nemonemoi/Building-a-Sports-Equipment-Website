@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -22,6 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>
     Sản phẩm
   </title>
@@ -36,116 +31,62 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show   bg-gray-100">
-  <!-- Nguyên đoạn này -->
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-  <?php
-    $active = 'sp'; 
+<body class="g-sidenav-show " style="background-color: #FFAEB9;">
+<?php
+    $active='sp';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
 
-  <main class="main-content position-relative border-radius-lg ">
+
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Sản phẩm</li>
-          </ol>
-          <h6 class="font-weight-bolder text-dark mb-0">Sản phẩm</h6>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5" style="display: flex; flex-wrap: nowrap;">
+          <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-dark" href="dashboard.php">Trang</a>
+            </li>
+            <li class="breadcrumb-item text-sm"><a href="products.php" class="text-dark">Sản Phẩm</li>
+        </ol>
+        <h6 class="font-weight-bolder text-dark mb-0">Danh sách sản phẩm</h6>
+    </nav>
+</div>
+
+       <!-- Đoạn này -->
+        <div style="margin-left: -300px; margin-top: 20px !important;" class="mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here..."> -->
+              
             </div>
           </div>
-          <!-- <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape text-center rounded-circle">
-                <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-white text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-white mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-white font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul> -->
+  
           <?php require 'nav.php'; ?>
         </div>
+
       </div>
     </nav>
-    <!-- End Navbar -->
-    <div class="container-fluid py-4">
-    <div class="row">
-    <?php
-      require 'connect.php';
-    ?>
-      </div>
+
       <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
+          <div class="card mb-4" style="margin-left: 105px;">
             <div class="row px-2">
               <form action="#" method="get">
                 <div class="px-3 col-12 pb-2 d-flex align-items-center">
-                  <div class="col-1 mt-2 font-weight-bold d-flex align-items-center">
-                    Lọc danh sách: 
-                  </div>
-                  <div class="px-2 mt-n3 col-2 font-weight-bold">
-                    <br>
-                    <select class="form-control form-control-md" name="source" id="source">
-                      <option value="" selected disabled hidden>- Nhà sản xuất -</option>
-                      <?php
-                        $sql = "SELECT * FROM nha_san_xuat";
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0) {
-                          $result = $conn->query($sql);
-                          $result_all = $result -> fetch_all(MYSQLI_ASSOC);
-                          foreach ($result_all as $row) {
-                            echo "<option value=" .$row["NSX_MA"]. ">".$row["NSX_TEN"]. "</option>";
-                          }                          
-                        } else {
-                          echo "<option value=''>Không có dữ liệu</option>";
-                        }
-                      ?>
-                    </select>
-                  </div>
-                  <div class="px-2 mt-2 col-1 font-weight-bold">
-                    <button type="submit" class="btn btn-primary text-white font-weight-bold text-md ms-0 mt-3">
-                      Lọc
-                    </button>
-                  </div>
+                  <div class="col-1 mt-2 font-weight-bold d-flex align-items-center" style="white-space: nowrap;">
+                    Danh sách sản phẩm: 
+                  </div> 
+                 
                   <div class="px-2 mt-n3 col-2"></div>
                   <div class="px-2 mt-n3 col-1 font-weight-bold"></div>
-                  <div class="col-5 mt-2 d-flex align-items-center justify-content-end">
-                    <div class="input-group w-75 me-3">
-                      <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                      <input type="text" name="timkiem" class="form-control" placeholder="Nhập tên sản phẩm cần tìm..">
+                 <div class="col-9 d-flex align-items-center  justify-content-end" style="margin-left: -50px; margin-top: 10px;">
+                        <div class="input-group w-40 me-3" >
+                      <input  type="text" name="timkiem" class="form-control" placeholder="Nhập tên sản phẩm cần tìm..">
+                          <button style="background-color: lightpink;" type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
                     </div>
-                    <button type="submit" class="btn btn-primary text-white font-weight-bold text-md ms-0 mt-3">
-                      Tìm
-                    </button>
+                   
                   </div>
                 </div>
               </form>
@@ -153,7 +94,7 @@
             </div>
           </div>
         </div>
-        <a href="products_add_form.php" class="btn btn-link text-warning mt-n3">+ Thêm sản phẩm</a>
+        <a href="products_add_form.php" class="btn btn-link text-dark mt-n3">+ Thêm sản phẩm</a>
       </div>
         <!-- Nguyên đống này la mot danh muc -->
         <?php
@@ -173,252 +114,125 @@
                 }
         ?>
               <div class="row">
-                <div class="col-12">
-                  <div class="card mb-4">
-                    <div class="card-header pb-2">
-                      <?php
-                        echo  "<h6>".$rowlsp["LSP_TEN"]."</h6>";
-                      ?>
-                    </div>
-                    <div class="card-body px-0 pt-0 pb-2">
-                      <div class="table-responsive p-0">
-                        <!-- table 5 cot -->
-                        <table class="table align-items-center mb-0">
-                          <thead>
+    <div class="col-12">
+        <div class="card mb-4" style="margin-left: 105px;">
+            <div class="card-header pb-2">
+                <?php echo "<h6>" . $rowlsp["LSP_TEN"] . "</h6>"; ?>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+                    <!-- table 5 cot -->
+                    <table class="table align-items-center mb-0">
+                        <thead>
                             <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-1">Mã</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sản phẩm</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Số lượng</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Giá</th>
-                              
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">RAM</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ROOM</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pin</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Màu sắc</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">IMEI</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">TGBH</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Màn hình</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Cam trước</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Cam sau</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">HĐH</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CPU</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sim</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tính năng</th>
-                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày nhập</th>
-                              <th class="text-secondary opacity-7"></th>
+                                <th style="width: 5%;" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-1">Mã</th>
+                                <th style="width: 15%;" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sản phẩm</th>
+                                <th style="width: 5%;" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Số lượng</th>
+                                <th style="width: 10%;" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Giá</th>
+                                <th style="width: 5%;" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">MÀU SẮC</th>
+                                <th class="text-secondary opacity-7"></th>
                             </tr>
-                          </thead>
-                          <tbody>
+                        </thead>
+                        <tbody>
                             <!-- 1 hang -->
                             <?php
-                              $result = $conn->query($sql);
-                              if ($result->num_rows > 0) {
-                                $result = $conn->query($sql);
-                                $result_all = $result -> fetch_all(MYSQLI_ASSOC);
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                $result_all = $result->fetch_all(MYSQLI_ASSOC);
                                 foreach ($result_all as $row) {
+                                    $pdid = $row["SP_MA"];
+                                    $soluong = $row["SP_SOLUONGTON"];
+                                    $lsp = $rowlsp["LSP_TEN"];
+                                    $mlsp = $rowlsp["LSP_MA"];
+                                    $query = "SELECT ct.PN_STT AS stt_pn, pn.PN_NGAYNHAP AS ngaynhap
+                                                FROM chitiet_pn ct
+                                                JOIN phieu_nhap pn ON ct.PN_STT=pn.PN_STT
+                                                JOIN san_pham sp ON ct.SP_MA=sp.SP_MA
+                                                WHERE sp.SP_MA = {$pdid};";
+                                    $rs = $conn->query($query);
+                                    ?>
+                                    <tr class="height-100">
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_MA"]; ?></p>
+                                        </td>
+                                        <td class="w-30">
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <?php
+                                                    $file = ($row["SP_HINHANH"] == null) ? "default.jpg" : $row["SP_HINHANH"];
+                                                    $avatar_url = "../assets/img/product_img/" . $file;
+                                                    echo "<img src='{$avatar_url}' class='avatar avatar-xl me-3' alt='user1'>";
+                                                    ?>
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-md"><?php echo $row["SP_TEN"]; ?></h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_SOLUONGTON"]; ?></p>
+                                        </td>
+                                        <td>
+                                            <p class="text-s font-weight-bold mb-0"><?php echo number_format($row["SP_GIA"], 0); ?> VNĐ</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_MAUSAC"]; ?></p>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <div class="mt-3 d-flex col-sm-12">
+                                                <div class="me-n1 align-middle col-4"></div>
 
-                                  $pdid = $row["SP_MA"];
-                                  $soluong = $row["SP_SOLUONGTON"];
-                                  $lsp = $rowlsp["LSP_TEN"];
-                                  $mlsp = $rowlsp["LSP_MA"];
-                                  
-                                  $query = "select ct.PN_STT as stt_pn, npp.NPP_MASO as mnppsp, npp.NPP_TEN as tennpp, pn.PN_NGAYNHAP as ngaynhap
-                                                from chitiet_pn ct
-                                                join phieu_nhap pn on ct.PN_STT=pn.PN_STT
-                                                join nha_phan_phoi npp on ct.NPP_MASO=npp.NPP_MASO
-                                                join san_pham sp on ct.SP_MA=sp.SP_MA
-                                                where sp.SP_MA = {$pdid};";
-                                                              
-                                  $rs = $conn->query($query);
-                                  $row1 = mysqli_fetch_assoc($rs);
-                                  $stt_pn = $row1["stt_pn"];
-                                  $ngaynhap = $row1["ngaynhap"];
-                                  $tennpp = $row1["tennpp"];
-                                  $manpp = $row1["mnppsp"];
-                                  
-                                  
-                                  $sql_nsx = "select n.NSX_MA as mnsxsp, n.NSX_TEN as nsxsp, s.SP_MA as masp
-                                                from nha_san_xuat n
-                                                join san_pham s on n.NSX_MA = s.NSX_MA
-                                                where s.SP_MA = {$pdid};";
+                                                <div class="d-flex justify-content-center">
+                                                  <form method="post" action="edit_product.php">
+                                                    <input type="hidden" name="pdid" value="<?php echo $row["SP_MA"]; ?>">
 
-                                  $rs_nsx = $conn->query($sql_nsx);
-                                  $row2 = mysqli_fetch_assoc($rs_nsx);
-                                  $mnsxsp = $row2["mnsxsp"];
-                                  $nsxsp = $row2["nsxsp"];
-                                  
+                                                  
+                                                        <input type="hidden" name="nsxsp" value="<?php echo $nsxsp; ?>">
+                                                        <input type="hidden" name="mnsxsp" value="<?php echo $mnsxsp; ?>">
+                                                        <input type="hidden" name="lsp" value="<?php echo $lsp; ?>">
+                                                        <input type="hidden" name="mlsp" value="<?php echo $mlsp; ?>">
+                                                        <input type="hidden" name="stt_pn" value="<?php echo $stt_pn; ?>">
+                                                        <input type="hidden" name="tensp" value="<?php echo $row["SP_TEN"]; ?>">
+                                                        <input type="hidden" name="kichthuocsp" value="<?php echo $row["SP_KICHTHUOC"]; ?>">
+                                                        <input type="hidden" name="anhsp" value="<?php echo $row["SP_HINHANH"]; ?>">
+                                                        <input type="hidden" name="slsp" value="<?php echo $row["SP_SOLUONGTON"]; ?>">
+                                                        <input type="hidden" name="colorsp" value="<?php echo $row["SP_MAUSAC"]; ?>">
+                                                        <input type="hidden" name="motasp" value="<?php echo $row["SP_MOTA"]; ?>">
+                                                        <input type="hidden" name="chatlieusp" value="<?php echo $row["SP_CHATLIEU"]; ?>">
+                                                        <input type="hidden" name="giasp" value="<?php echo $row["SP_GIA"]; ?>">
 
-                                  ?>
-                                  <tr class="height-100">
-                                     <!-- ma sp -->
-                                     <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_MA"]; ?></p>
-                                    </td>
-                                  
-                                    <td class="w-30" >
-                                      <div class="d-flex px-2 py-1">
-                                          <!-- hinh anh san pham -->
-                                        <div>
-                                          <?php
-                                            if($row["SP_HINHANH"]==null){
-                                              $file = "default.jpg";
-                                            } else {
-                                              $file = $row["SP_HINHANH"];
-                                            } 
-                                            $avatar_url = "../assets/img/product_img/" . $file;
-                                            echo "<img src='{$avatar_url}' class='avatar avatar-xl me-3' alt='user1'>";
-                                          ?> 
-                                          
-                                        </div>
-                                        <!-- ten san pham -->
-                                        <div class="d-flex flex-column justify-content-center">
-                                          <h6 class="mb-0 text-md"><?php echo $row["SP_TEN"]; ?></h6>
-                                          <p class='text-xs text-secondary mb-0'><?php echo "Nhà phân phối: " . $tennpp; ?></p>
-                                        </div>
-                                      </div>
-                                    </td>
-                                    <!-- soluong sp -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_SOLUONGTON"]; ?></p>
-                                    </td>
-                                    <!-- gia sp -->
-                                    <td>
-                                      <p class="text-s font-weight-bold mb-0"><?php echo number_format($row["SP_GIA"], 0) ; ?> VNĐ</p>
-                                    </td>
-                                    
-                                    <!-- ram -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_RAM"]; ?></p>
-                                    </td>       
-                                    <!-- room -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_ROOM"]; ?></p>
-                                    </td>
-                                    <!-- pin -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_PIN"]; ?></p>
-                                    </td>
-                                    <!-- màu sắc -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_MAUSAC"]; ?></p>
-                                    </td>
-                                    <!-- imei -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_IMEI"]; ?></p>
-                                    </td>
-                                    <!-- tgbh -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_TGBH"]; ?></p>
-                                    </td>
-                                    <!-- màn hình -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_MANHINH"]; ?></p>
-                                    </td>
-                                    <!-- cam trước -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_CAMTRUOC"]; ?></p>
-                                    </td>
-                                    <!-- cam sau -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_CAMSAU"]; ?></p>
-                                    </td>
-                                    <!-- hệ điều hành -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_HDH"]; ?></p>
-                                    </td>
-                                    <!-- cpu -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_CPU"]; ?></p>
-                                    </td>
-                                    <!-- sim -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_SIM"]; ?></p>
-                                    </td>
-                                    <!-- tính năng -->
-                                    <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $row["SP_TINHNANG"]; ?></p>
-                                    </td>
+                                         
+                                                        <button onclick="this.form.submit()"  class="btn btn-link text-primary font-weight-bold text-sm" > 
+                                                            Sửa
+                                                        </button>
 
-                                    <!-- <td>
-                                      <p class="text-xs font-weight-bold mb-0"><?php echo $tennpp; echo $stt_pn;?></p>
-                                    </td> -->
-                                    
-                                    <!-- ngay them -->
-                                    <td class="align-middle text-center">
-                                    <p class="text-xs font-weight-bold mb-0"><?php echo date('d/m/Y', strtotime($ngaynhap)); ?></p>
-                                    </td>
-                                    <td class="align-middle text-center">
-                                      <div class="mt-3 d-flex col-sm-12">
-                                        <div class="me-n1 align-middle col-4">
-                                          <!-- <form method="get" action=""> -->
-                                            <!-- <input type="hidden" name="pdid_add" value="<?php echo $row["SP_MA"]; ?>"> -->
-                                            <button data-id="<?php echo $row["SP_MA"]; ?>" data-name="<?php echo $row["SP_TEN"]; ?>" data-img="<?php echo $avatar_url; ?>" class="addmore-button btn btn-link text-success text-secondary font-weight-bold text-sm">
-                                              Nhập thêm
-                                              <!-- onclick="showOverlay()" -->
-                                            </button>
-                                          <!-- </form> -->
-                                        </div>
-                                        <div class="me-n0 align-middle col-4">
-                                          <form method="post" action="edit_product.php">
-                                              <input type="hidden" name="pdid" value="<?php echo $row["SP_MA"]; ?>">
-                                              <input type="hidden" name="nsxsp" value="<?php echo $nsxsp; ?>">
-                                              <input type="hidden" name="mnsxsp" value="<?php echo $mnsxsp; ?>">
-                                              <input type="hidden" name="lsp" value="<?php echo $lsp; ?>">
-                                              <input type="hidden" name="mlsp" value="<?php echo $mlsp; ?>">
-
-                                              <input type="hidden" name="stt_pn" value="<?php echo $stt_pn; ?>">
-
-                                              <input type="hidden" name="manpp" value="<?php echo $manpp; ?>">
-                                              <input type="hidden" name="tennpp" value="<?php echo $tennpp; ?>">
-
-                                              <input type="hidden" name="imeisp" value="<?php echo $row["SP_IMEI"]; ?>">
-                                              <input type="hidden" name="tensp" value="<?php echo $row["SP_TEN"]; ?>">
-                                              <input type="hidden" name="colorsp" value="<?php echo $row["SP_MAUSAC"]; ?>">
-                                              <input type="hidden" name="tnsp" value="<?php echo $row["SP_TINHNANG"]; ?>">
-                                              <input type="hidden" name="tgbhsp" value="<?php echo $row["SP_TGBH"]; ?>">
-                                              <input type="hidden" name="anhsp" value="<?php echo $row["SP_HINHANH"]; ?>">
-                                              <input type="hidden" name="slsp" value="<?php echo $row["SP_SOLUONGTON"]; ?>">
-                                              <input type="hidden" name="mhsp" value="<?php echo $row["SP_MANHINH"]; ?>">
-                                              <input type="hidden" name="hdhsp" value="<?php echo $row["SP_HDH"]; ?>">
-                                              <input type="hidden" name="ctsp" value="<?php echo $row["SP_CAMTRUOC"]; ?>">
-                                              <input type="hidden" name="cssp" value="<?php echo $row["SP_CAMSAU"]; ?>">
-                                              <input type="hidden" name="cpusp" value="<?php echo $row["SP_CPU"]; ?>">
-                                              <input type="hidden" name="ramsp" value="<?php echo $row["SP_RAM"]; ?>">
-                                              <input type="hidden" name="roomsp" value="<?php echo $row["SP_ROOM"]; ?>">
-                                              <input type="hidden" name="simsp" value="<?php echo $row["SP_SIM"]; ?>">
-                                              <input type="hidden" name="pinsp" value="<?php echo $row["SP_PIN"]; ?>">
-                                              <input type="hidden" name="giasp" value="<?php echo $row["SP_GIA"]; ?>">
-
-                                              <button onclick="this.form.submit()" class="btn btn-link text-primary font-weight-bold text-sm">
-                                                Sửa
-                                              </button>
-                                            </form>
-                                        </div>
-                                        <div class=" align-middle col-1">
-                                          <form method="post" action="del_product.php">
-                                              <input type="hidden" name="pdid" value="<?php echo $row["SP_MA"]; ?>">
-                                              <button onclick="this.form.submit()" class="addmore-button btn btn-link text-warning text-secondary font-weight-bold text-sm">
-                                                Xóa
-                                              </button>
-                                            </form>
-                                        </div>
-
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  <?php
-                                } 
-                              }
+                                                        
+                                                    </form>
+                                                </div>
+                                                <div class="align-middle col-1">
+                                                    <form method="post" action="del_product.php">
+                                                        <input type="hidden" name="pdid" value="<?php echo $row["SP_MA"]; ?>">
+                                                        <button type="submit" class="addmore-button btn btn-link text-warning text-secondary font-weight-bold text-sm">
+                                                            Xóa
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
                             ?>
-                            
                             <!-- het 1 hang -->
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
               <?php
             }                          
           } else {
@@ -428,56 +242,33 @@
 
       </div>
       
-      <div class="overlay" id="overlay">
-        <div class="my-box">
-          <h5 class="ms-3 mt-3 text-primary">Nhập thêm sản phẩm</h5>
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-6 d-flex justify-content-center align-items-center">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="product-image">
-                        
-                      </div>  
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="ms-2 product-name">
-    
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <form action="update_quantity.php" method="post">
-                    <div class="mb-3 mt-4 px-3">
-                      Số lượng nhập thêm
-                      <input type="hidden" name="temp_id" id="temp_id">
-                      <input min="1" max="10000" step="1" type="number" name="quantity" class="form-control form-control-lg mt-3" placeholder="Nhập số lượng sản phẩm nhập thêm">
-                      <div class="row">
-                        <div class="col-12 d-flex justify-content-center align-items-center" >
-                            <button type="submit" class="btn btn-primary text-white font-weight-bold text-md ms-0 mt-4">
-                              Cập nhật
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+                     
       </div>
     </div>
       </div>
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0 overflow-auto">
         
+
   <!--   Core JS Files   -->
   <style>
+   
+   .ps__thumb-x {
+    display: none !important;
+}
+    .ps__rail-x {
+    display: none !important;
+}
+
+   .table-condensed td, .table-condensed th {
+    padding: -0.3rem;
+  }
+  .card {
+    max-width: 1000px; /* Giới hạn chiều rộng */
+  }
+ 
+
     .overlay {
       position: fixed;
       top: 0;
@@ -500,6 +291,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+    .description {
+  white-space: normal; /* Cho phép văn bản xuống dòng */
+  word-wrap: break-word; /* Gói gọn văn bản dài không bị cắt ngang */
+  overflow-wrap: break-word; /* Đảm bảo rằng các từ dài không tràn ra ngoài */
+  width: 400px; /* Điều chỉnh kích thước tối đa của đoạn văn để phù hợp với kích thước của ô */
+}
+
 
   </style>
   <script>

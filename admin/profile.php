@@ -1,27 +1,24 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 <?php
   session_start();
 ?>
+
+  
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>
     Thông tin cá nhân
   </title>
@@ -36,28 +33,50 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show bg-gray-100">
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-  
-  <?php
+<?php
     $active = 'tttk'; 
     require 'aside.php';
   ?>
 
-  <div class="main-content position-relative max-height-vh-100 h-100">
+ <!--  <style>
+    .body{
+      background-color: blue;
+    }
+  </style> -->
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+  <body class="g-sidenav-show" style="background-color: #CD5C5C;">
+
+ <!--  <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://cdn.pixabay.com/photo/2022/02/18/14/15/basketball-background-7020782_1280.png'); ">
+    <span class="mask bg-primary opacity-5"></span> -->
+  </div>
+  
+
+
+
+  <div class="main-content position-relative max-height-vh-100 h-100" style="margin-top: -20px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-3 px-3">
+
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5" style="display: flex; flex-wrap: nowrap;">
+          <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-white" href="dashboard.php">Trang</a>
+            </li>
+            <li class="breadcrumb-item text-sm"><a href="profile.php" class="text-white">Thông tin tài khoản</li>
+        </ol>
+        <h6 class="font-weight-bolder text-white mb-0">Thông tin tài khoản</h6>
+    </nav>
+</div>
+
+      <!-- <div class="container-fluid py-3 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="dashboard.php">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Thông tin tài khoản</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="#">Trang</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Thông tin tài khoản</li>
           </ol>
-          <h6 class="font-weight-bolder text-dark mb-0">Thông tin tài khoản</h6>
-        </nav>
+          <h6 class="font-weight-bolder text-white mb-0">Thông tin tài khoản</h6>
+        </nav> -->
         <!-- Đoạn này -->
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -98,56 +117,15 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div style="margin-top: 0;" class="card shadow-lg mx-4 card-profile-bottom">
-      <!-- <div class="card-body p-3">
-        <div class="row gx-4">
-          <div class="col-auto">
-            <div class="avatar avatar-xl position-relative">
-              <img src="../assets/img/team-1.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
-            </div>
-          </div>
-          <div class="col-auto my-auto">
-            <div class="h-100">
-              <h5 class="mb-1">
-                Sayo Kravits
-              </h5>
-              <p class="mb-0 font-weight-bold text-sm">
-                Public Relations
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
-            <div class="nav-wrapper position-relative end-0">
-              <ul class="nav nav-pills nav-fill p-1" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 active d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
-                    <i class="ni ni-app"></i>
-                    <span class="ms-2">App</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                    <i class="ni ni-email-83"></i>
-                    <span class="ms-2">Messages</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                    <i class="ni ni-settings-gear-65"></i>
-                    <span class="ms-2">Settings</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-     -->
+    <!-- <div style="margin-top: 0; background-color: #FF6A6A;" class="card shadow-lg mx-4 card-profile-bottom"> -->
+      <div style="margin-top: -5px; !important" class="card shadow-lg mx-4 card-profile-bottom">
+      
+ 
     </div>
     <div class="container-fluid py-5">
-      <div class="row">
+      <div class="row" style= "d-flex align-items-start" style="gap: 10px;">
         <div class="col-md-8">
-          <div class="card">
+          <div class="card" style="margin-top: -20px; margin-left: 280px;">
             <form action="update_profile.php" method="post">
               <?php
 
@@ -179,7 +157,7 @@
               <input type="hidden" name="old_staffImg" value="<?php echo $tkavt; ?>">
               <input type="hidden" name="staff_pass" value="<?php echo $tkpw; ?>">
               <input type="hidden" name="staff_repass" value="<?php echo $tkpw; ?>">
-              <div class="card-body">
+              <div class="card-body" style="margin-top: 10px; ">
                 <p class="text-uppercase text-sm mt-2">Thông tin cá nhân</p>
                 <div class="row">
                   <div class="col-md-7">
@@ -188,12 +166,12 @@
                       <input class="form-control" type="text" name="staff_name" value="<?php echo $nvhoten; ?>">
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <!-- <div class="col-md-2">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Mã nhân viên</label>
                       <input class="form-control" disabled type="text" name="staff_id" value="<?php echo $nvid;?>">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Ngày vào làm</label>
@@ -242,7 +220,7 @@
                       <div class=" col-md-4 float-end align-items-center">
                         <input class="ms-3" type="checkbox" id="check" onchange="toggleButton()"> <span class="mb-0 ms-1">Xác nhận thông tin</span>
                         <div class="row">
-                          <button id="button" disabled class="ms-n2 btn btn-primary btn-sm ms-auto">Cập nhật thông tin</button>
+                          <button id="button" disabled style="background-color: #CD5C5C;" class="ms-n2 btn text-white btn-sm ms-auto">Cập nhật thông tin</button>
                         </div>
                       </div>
                   </div>
@@ -259,59 +237,52 @@
                     </script>
                 </div>
                 <hr class="horizontal dark">
-                <p class="text-uppercase text-sm">Tài khoản</p>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Mã tài khoản</label>
-                      <input class="form-control" type="text" disabled value="<?php echo $tkid; ?>">
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Chức vụ</label>
-                      <?php
-                        if($tkvaitro == '1'){
-                          $tkvt = 'Quản lý';
-                        } else if ($tkvaitro == '2'){
-                          $tkvt = 'Nhân viên bán hàng';
-                        } else{
-                          $tkvt = 'Nhân viên kế toán';
-                        }
-                      ?>
-                      <input class="form-control" type="text" name="staff_vaitro" disabled value="<?php echo $tkvt; ?>">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Tên đăng nhập</label>
-                      <input class="form-control" type="text" name="staff_usname" disabled value="<?php echo $tkusn; ?>">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Mật khẩu</label>
-                      <!-- <input class="form-control btn btn-outline-warning text-warning" type="button" value="Đổi mật khẩu"> -->
-                      <a href="change_password.php" class="form-control btn btn-outline-warning text-warning">Đổi mật khẩu</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- <hr class="horizontal dark">
-                <p class="text-uppercase text-sm">About me</p>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">About me</label>
-                      <input class="form-control" type="text" value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
-                    </div>
-                  </div>
-                </div> -->
+<p class="text-uppercase text-sm">Tài khoản</p>
+<div class="row align-items-start">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="example-text-input" class="form-control-label">Mã tài khoản</label>
+      <input class="form-control" type="text" disabled value="<?php echo $tkid; ?>">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="example-text-input" class="form-control-label">Chức vụ</label>
+      <?php
+        if($tkvaitro == '1'){
+          $tkvt = 'Quản lý';
+        } else if ($tkvaitro == '2'){
+          $tkvt = 'Nhân viên bán hàng';
+        } else{
+          $tkvt = 'Nhân viên kế toán';
+        }
+      ?>
+      <input class="form-control" type="text" name="staff_vaitro" disabled value="<?php echo $tkvt; ?>">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="example-text-input" class="form-control-label">Tên đăng nhập</label>
+      <input class="form-control" type="text" name="staff_usname" disabled value="<?php echo $tkusn; ?>">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="example-text-input" class="form-control-label">Mật khẩu</label>
+      <a href="change_password.php" class="form-control btn btn-outline-danger text-danger justify-content-center">Đổi mật khẩu</a>
+    </div>
+  </div>
+</div>
+
+
+                
               </div>
             </form>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card card-profile">
+  <div class="card card-profile" style="margin-top: -20px; margin-left: -10px;">
+        
             <!-- <img src="../assets/img/bgr-profile.jpg" alt="Image placeholder" class="card-img-top"> -->
             <div class="row justify-content-center">
               <div class="col-4 col-lg-4 order-lg-2">
@@ -324,7 +295,7 @@
             </div>
             <div class="card-header text-center border-0 px-6 pt-0 pt-lg-2 pb-4 pb-lg-3">
               <div class="d-flex justify-content-center">
-                <a href="change_avatar.php" class="btn btn-sm btn-primary mb-0 d-none d-lg-block">Thay đổi ảnh đại diện</a>
+                <a href="change_avatar.php" style="background-color: #CD5C5C;" class="btn btn-sm text-white mb-0 d-none d-lg-block">Thay đổi ảnh đại diện</a>
               </div>
               <div class="d-flex justify-content-center mt-2">
                 <a href="log_out.php" class="btn btn-sm btn-dark mb-0 d-none d-lg-block">Đăng xuất</a>
@@ -333,7 +304,7 @@
             <div class="card-body pt-0">
               <div class="row">
                 <div class="col">
-                  <div class="d-flex justify-content-center">
+                  <!-- <div class="d-flex justify-content-center">
                     <div class="d-grid text-center">
                       <span class="text-lg font-weight-bolder">29</span>
                       <span class="text-sm opacity-8">Sản phẩm</span>
@@ -345,57 +316,26 @@
                     <div class="d-grid text-center">
                       <span class="text-lg font-weight-bolder">100</span>
                       <span class="text-sm opacity-8">Bình luận</span>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
-              <div class="text-center mt-3">
-                <h5>
+              <div class="text-center mt-3" >
+                <h5 class="text-bold" style="margin-top: -20px">
                   <?php echo $nvhoten; ?>
                 </h5>
                 <div class="h6 mt-3">
                   <i class="ni business_briefcase-24 mr-2"></i><?php echo $tkvt; ?>
                 </div>
                 <div class="mt-n2">
-                  <i class="ni education_hat mr-2"></i>Cửa hàng điện thoại BRIGHT MOBILE
-                </div>
+                  <i class="ni education_hat mr-2"></i>Cửa hàng dụng cụ thể thao じゃな、sportsman
+                </div><br>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </div>
   

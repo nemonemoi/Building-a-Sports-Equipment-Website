@@ -1,145 +1,92 @@
 <?php
-
 session_start();
+ob_start(); // Bật bộ đệm đầu ra
 require 'connect.php';
 
+// Xử lý upload ảnh sản phẩm
 $file_name = basename($_FILES["productImg"]["name"]);
 $target_dir = "../assets/img/product_img/";
-$target_file = $target_dir . basename($_FILES["productImg"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$target_file = $target_dir . $file_name;
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 $uploadOk = 1;
 
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["productImg"]["tmp_name"]);
-  if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
-    $uploadOk = 1;
-  } else {
-    echo "File is not an image.";
-    $uploadOk = 0;
-  }
-}
-
-// Check if file already exists
-$new_name = basename($_FILES["productImg"]["name"]);
-if (file_exists($target_file)){
-    $count=1;
-    $name = strtolower(pathinfo($new_name,PATHINFO_FILENAME));
-    while(file_exists($target_file)){
-        $new_name = "";
-        $new_name = $name."-".$count.".".$imageFileType;
-        $target_file = $target_dir.$new_name; 
-        $count++;
-        echo $count;
-    }
-}
-
-// Check file size
-if ($_FILES["productImg"]["size"] > 30000000) {
-  echo "Dung lượng file quá lớn";
-  $uploadOk = 0;
-}
-
-if($file_name != null){
-  if(($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg")) {
-    echo "Chỉ chấp nhận file JPG, JPEG & PNG <br>".$file_name;
-    $uploadOk = 0;
-  }
-} else {
-  $target_file = $target_dir . "default.jpg";
-  $file_name = "default.png";
-}
-
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-  if (move_uploaded_file($_FILES["productImg"]["tmp_name"], $target_file)) {
-    $filename = $file_name;
-  } else {
-    $filename = "default.png";
-  }
-
-
-  
-
-  //Lấy id lớn nhất
-	$sql = "select max(SP_MA) as max_id from san_pham";
-  $result = $conn -> query($sql);
-  if ($result->num_rows > 0) {
-    $row = mysqli_fetch_assoc($result);
-    $max_id = $row["max_id"];
-  }
-
-  $sqlpn = "select max(PN_STT) as max_pn from phieu_nhap";
-  $result = $conn -> query($sqlpn);
-  if ($result->num_rows > 0) {
-    $row = mysqli_fetch_assoc($result);
-    $max_pn = $row["max_pn"];
-  }
-
-
-  $nvid = $_SESSION["nvid"];
-  
-
-  $pdid = $max_id+1;
-  $nsxid = $_POST["nsxid"];
-  $lspid = $_POST["types"];
-  $pdimei = $_POST["imei"];
-  $pdname = $_POST["pd_name"];
-  $pdcolor = $_POST["color"];
-  $pdtn = $_POST["tinhnang"];
-  $pdbh = $_POST["baohanh"];
-  $pdi = $filename;
-  $pdmanhinh = $_POST["manhinh"];
-  $pdhdh = $_POST["hdh"];
-  $pdcamtruoc = $_POST["camtruoc"];
-  $pdcamsau = $_POST["camsau"];
-  $pdcpu = $_POST["cpu"];
-  $pdram = $_POST["ram"];
-  $pdroom = $_POST["room"];
-  $pdsim = $_POST["sim"];
-  $pdpin = $_POST["pin"];
-  $pdprice = $_POST["pd_price"];
-
-  $pnid = $max_pn+1;
-  $pn_id = $max_pn;
-
-  $nppid = $_POST["source"];
-  $pdsl = $_POST["pd_quantity"];
-
-  
-  // echo "<br>" . $pdid, $nsxid,  $lspid, $pdimei,  $pdname,  $pdcolor, $pdtn, $pdbh, $pdi, $pdsl, $pdmanhinh, $pdhdh, $pdcamtruoc, $pdcamsau, $pdcamsau, $pdcpu, $pdram, $pdroom, $pdsim, $pdpin;
-  
-
-  $sql = "insert into SAN_PHAM 
-            values('".$pdid."', '".$nsxid."', '".$lspid."', '".$pdimei."', '".$pdname."', '".$pdcolor."', '".$pdtn."', '".$pdbh."', '".$pdi."', '".$pdsl."', '".$pdmanhinh."', '".$pdhdh."', '".$pdcamtruoc."', '".$pdcamsau."', '".$pdcpu."', '".$pdram."', '".$pdroom."', '".$pdsim."', '".$pdpin."', '".$pdprice."')";
-
-
-	if ($conn->query($sql) == true) {
-    $sql1 = "insert into PHIEU_NHAP values('".$pnid."', sysdate())";
-    // $sql2 = "insert into CHITIET_PN values('".$pdid."', '".$pnid."', '".$nvid."', '".$nppid."', '".$pdsl."', '".$pdprice."')";
-    if ($conn->query($sql1) == true){ 
-      $sql2 = "insert into CHITIET_PN values('".$pdid."', '".$pnid."', '".$nvid."', '".$nppid."', '".$pdsl."', '".$pdprice."')";
-      if($conn->query($sql2) == true){
-        $message = "Thêm sản phẩm thành công";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        header('Refresh: 0;url=products.php');
-      } else{
-        echo "Error: " . $sql2 . "<br>" . $conn->error;
-      }
+// Kiểm tra có phải file ảnh không
+if (isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["productImg"]["tmp_name"]);
+    if ($check !== false) {
+        $uploadOk = 1;
     } else {
-      echo "Error: " . $sql1 . "<br>" . $conn->error;
+        $uploadOk = 0;
     }
-
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-
-
-  $conn->close();
 }
 
+// Kiểm tra dung lượng file
+if ($_FILES["productImg"]["size"] > 30000000) { // 30MB
+    $uploadOk = 0;
+}
+
+// Kiểm tra định dạng file
+if ($file_name != null) {
+    if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+        $uploadOk = 0;
+    }
+} else {
+    // Nếu không chọn file ảnh, sử dụng ảnh mặc định
+    $file_name = "default.png";
+    $target_file = $target_dir . $file_name;
+}
+
+// Upload file nếu không có lỗi
+if ($uploadOk) {
+    if (move_uploaded_file($_FILES["productImg"]["tmp_name"], $target_file)) {
+        // Ảnh đã được upload
+    } else {
+        $file_name = "default.png"; // Nếu lỗi, dùng ảnh mặc định
+    }
+} else {
+    $file_name = "default.png"; // Nếu không hợp lệ, dùng ảnh mặc định
+}
+
+// Lưu tên file ảnh vào cơ sở dữ liệu
+$filename = $file_name;
+
+// Lấy mã sản phẩm mới
+$sql = "SELECT MAX(SP_MA) AS max_id FROM SAN_PHAM";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $max_id = $row["max_id"];
+} else {
+    $max_id = 0; // Nếu bảng rỗng, bắt đầu từ 0
+}
+$pdid = $max_id + 1;
+
+// Lấy dữ liệu từ form
+$nsxid = $_POST["nsxid"];
+$lspid = $_POST["types"];
+$pd_name = $_POST["pd_name"];
+$color = $_POST["color"];
+$mota = $_POST["mota"];
+$chatlieu = $_POST["chatlieu"];
+$kichthuoc = $_POST["kichthuoc"];
+$monthethao = $_POST["monthethao"];
+$pd_price = $_POST["pd_price"];
+$pd_quantity = $_POST["pd_quantity"];
+
+// Thực hiện thêm sản phẩm
+$sql = "INSERT INTO SAN_PHAM (SP_MA, NSX_MA, LSP_MA, SP_TEN, SP_MAUSAC, SP_MOTA, SP_CHATLIEU, SP_SOLUONGTON, SP_KICHTHUOC, SP_THETHAO, SP_GIA, SP_HINHANH, SP_NGAYTAO) 
+        VALUES ('$pdid', '$nsxid', '$lspid', '$pd_name', '$color', '$mota', '$chatlieu', '$pd_quantity', '$kichthuoc', '$monthethao', '$pd_price', '$filename', NOW())";
+
+// $sql = "INSERT INTO SAN_PHAM (SP_MA, NSX_MA, LSP_MA, SP_TEN, SP_MAUSAC, SP_MOTA, SP_CHATLIEU, SP_SOLUONGTON, SP_KICHTHUOC, SP_GIA, SP_HINHANH) 
+//         VALUES ('$pdid', '$nsxid', '$lspid', '$pd_name', '$color', '$mota', '$chatlieu', '$pd_quantity', '$kichthuoc', '$pd_price', '$filename')";
+
+if ($conn->query($sql) === TRUE) {
+    header('Location: products.php'); // Chuyển hướng về trang sản phẩm
+    exit(); // Dừng thực thi mã sau khi chuyển hướng
+} else {
+    echo "Lỗi: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+ob_end_flush(); // Kết thúc bộ đệm đầu ra
 ?>

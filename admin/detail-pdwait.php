@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE php>
 <php lang="en">
 
@@ -26,6 +13,13 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>
     Chi tiết đơn hàng
   </title>
@@ -41,64 +35,37 @@
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-  <!-- Nguyên đoạn này -->
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div>
-   -->
+ 
   <?php
-    $active = 'dh'; 
+    $active='hd';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #8EE5EE;">
 
-  <main class="main-content position-relative border-radius-lg ">
+
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -35px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="dashboard.php">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Chi tiết đơn hàng</li>
-          </ol>
-          <h6 class="font-weight-bolder text-dark mb-0">Chi tiết đơn hàng</h6>
-        </nav>
 
-        <!-- Đoạn này -->
+      <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5" style="display: flex; flex-wrap: nowrap;">
+            <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-dark" href="dashboard.php">Trang</a>
+            </li>
+            <li class="breadcrumb-item text-sm"><a href="products_wait.php" class="text-dark">Đơn hàng</li>
+        </ol>
+        <h6 class="font-weight-bolder text-dark mb-0">Trạng thái đơn hàng</h6>
+    </nav>
+</div>
+
+
+       <!-- Đoạn này -->
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here..."> -->
-            </div>
-          </div>
-          <!-- <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-dark text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-dark mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-white font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul> -->
+             
           <?php require 'nav.php'; ?>
         </div>
       </div>
@@ -125,13 +92,13 @@
                       $trangthai = $_POST["trangthai"];
                       $tentrangthai = $_POST["tentrangthai"];
                       $ngaysinh = $_POST["ngaysinh"];
-                      $phuongthuc = $_POST["phuongthuc"];
+                      // $phuongthuc = $_POST["phuongthuc"];
                       $lidohuy = $_POST["lidohuy"];
                       
                     ?>
                     <form action="#" method="get">
                     <div class="card-header pb-2 d-flex align-items-center">
-                        <div class="col-3">
+                        <div class="col-4">
                           <h6 class="">Thông tin khách hàng</h6>
                         </div>
                         <div class="col-9 d-flex align-items-center justify-content-end"></div>
@@ -148,7 +115,7 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Khách hàng</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Liên hệ</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tổng tiền</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phương thức thanh toán</th>
+                                <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phương thức thanh toán</th> -->
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                             </tr>
                             </thead>
@@ -187,9 +154,9 @@
                                         <p class="text-s text-success font-weight-bold mb-0"><?php echo number_format($tongtien);  ?> VNĐ</p>
                                         </td>
                                         <!-- phuong thuc -->
-                                        <td class="align-middle text-center">
+                                        <!-- <td class="align-middle text-center">
                                           <p class="text-xs font-weight-bold text-secondary mb-0"><?php echo $phuongthuc;  ?></p>
-                                        </td>
+                                        </td> -->
                                         <!-- status-->
                                         <td class="align-middle text-center">
                                           <?php
@@ -213,11 +180,11 @@
               <div class="col-12 px-4">
                 <div class="card mb-4">
                   <div class="card-header pb-2 d-flex align-items-center">
-                      <div class="col-3">
+                      <div class="col-4">
                           <h6 class="">Danh sách sản phẩm</h6>
                       </div>
                       <div class="col-5 d-flex align-items-center  justify-content-end"></div>
-                      <div class="col-4 d-flex align-items-center justify-content-end">
+                      <div class="col-5 d-flex align-items-center justify-content-end" style="margin-left: -110px;">
                         Ngày đặt hàng: <span class="ms-2 text-secondary text-s text-center font-weight-bold"><?php echo date('d/m/Y', strtotime($ngaydat)); ?></span>
                       </div>
                   </div>
@@ -302,77 +269,66 @@
             </div>
           </div>
           <div class="col-3">
-            <div class="row">
-              <div class="col-12 ">
-                <div class="card mb-4">
-                  <div class="card-header pb-2 d-flex align-items-center">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-2 d-flex align-items-center">
                     <div class="col-12">
-                      <h6 class="">Thao tác đơn hàng</h6>
+                        <h6 class="">Thao tác đơn hàng</h6>
                     </div>
-                  </div>
-                  <div class="card-body px-0 pt-1 pb-2 px-4 py-4">
+                </div>
+                <div class="card-body px-0 pt-1 pb-2 px-4 py-4">
                     <form action="update_status_bill.php" method="post">
-                      <div class="col-12 d-flex align-items-center justify-content-end">
-                        <select id="mySelect" onchange="showTextarea()" class="form-control form-control-md" name="status" id="status">
-                          <option value="<?php echo $trangthai; ?>" selected hidden><?php echo $tentrangthai; ?></option>
-                          <?php
-                              $sqltt = "SELECT * FROM trang_thai";
-                              $resulttt = $conn->query($sqltt);
-                              if ($resulttt->num_rows > 0) {
-                                $resulttt = $conn->query($sqltt);
-                                $resulttt_all = $resulttt -> fetch_all(MYSQLI_ASSOC);
-                                foreach ($resulttt_all as $rowtt) {
-                                  echo "<option value=" .$rowtt["TT_MA"]. ">".$rowtt["TT_TEN"]."</option>";
-                                }                          
-                              } else {
-                                echo "<option value=''>Không có dữ liệu</option>";
-                              }
-                              ?>
-                              
-                          </select>
-                      </div>
-                      <?php
-                        $dp = "none";
-                        if ($trangthai==0){
-                          $dp = "block";
-                        } else {
-                          $dp = "none";
-                        }
-                      ?>
-                      <div class="col-12 d-flex align-items-center mt-2">
-                        <textarea id="myTextarea" style="display: <?php echo $dp ?>;" name="lido" class="form-control form-control-md"><?php echo $lidohuy ?></textarea>
-                      </div>
-                      <?php
-                        $dp1 = "none";
-                        if ($trangthai==0){
-                          $dp1 = "block";
-                        } else {
-                          $dp1 = "none";
-                        }
-                      ?>
-                      <div class="col-12 d-flex align-items-center mt-2">                        
-                        <select id="myTextarea1" style="display: <?php echo $dp1 ?>;" name="donvc" class="form form-control form-control-md" id="city" aria-label=".form-select-sm">
-                          <option value="" selected hidden disabled>- Chọn ĐVC -
-                          <?php
-                              $sql_dvc = "select * from don_van_chuyen where DVC_TGBATDAU >= sysdate()";
-                              $rs_dvc = $conn->query($sql_dvc);
-                              if ($rs_dvc->num_rows > 0) {
-                                  $rs_dvc = $conn->query($sql_dvc);
-                                  $rsnvc_all = $rs_dvc -> fetch_all(MYSQLI_ASSOC);
-                                  foreach ($rsnvc_all as $r_dvc) {
-                                  ?>
-                                      <option value=<?php echo $r_dvc["DVC_MA"] ?>><?php echo $r_dvc["DVC_MA"] .' - '. $r_dvc["DVC_DIACHI"] .' - '. date('d/m/Y', strtotime($r_dvc["DVC_TGBATDAU"])); ?>
-                                  <?php
-                                  }
-                              }
-                          ?>          
-                        </select>
-                      </div>
-                      <div class="col-12 d-flex align-items-center justify-content-center">
-                        <input type="hidden" name="mahd" value="<?php echo $mahd; ?>">
-                        <button class="btn btn-primary text-white mt-2 ms-3" type="submit">Cập nhật đơn hàng</button>
-                      </div>
+                        <div class="col-12 d-flex align-items-center justify-content-end">
+                            <select id="mySelect" onchange="showTextarea()" class="form-control form-control-md" name="status">
+                                <option value="<?php echo $trangthai; ?>" selected hidden><?php echo $tentrangthai; ?></option>
+                                <?php
+                                    $sqltt = "SELECT * FROM trang_thai";
+                                    $resulttt = $conn->query($sqltt);
+                                    if ($resulttt->num_rows > 0) {
+                                        $resulttt = $conn->query($sqltt);
+                                        $resulttt_all = $resulttt->fetch_all(MYSQLI_ASSOC);
+                                        foreach ($resulttt_all as $rowtt) {
+                                            echo "<option value=" . $rowtt["TT_MA"] . ">" . $rowtt["TT_TEN"] . "</option>";
+                                        }
+                                    } else {
+                                        echo "<option value=''>Không có dữ liệu</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <!-- <div class="col-12 d-flex align-items-center mt-2">
+                            <textarea id="myTextarea" style="display: <?php echo $dp ?>;" name="lido" class="form-control form-control-md"><?php echo $lidohuy ?></textarea>
+                        </div> -->
+                       <!--  <div class="col-12 d-flex align-items-center mt-2">
+                            <select id="myTextarea1" style="display: <?php echo $dp1 ?>;" name="donvc" class="form form-control form-control-md">
+                                <option value="" selected hidden disabled>- Chọn ĐVC -</option>
+                                <?php
+                                    $sql_dvc = "SELECT * FROM don_van_chuyen WHERE DVC_TGBATDAU >= sysdate()";
+                                    $rs_dvc = $conn->query($sql_dvc);
+                                    if ($rs_dvc->num_rows > 0) {
+                                        $rs_dvc = $conn->query($sql_dvc);
+                                        $rsnvc_all = $rs_dvc->fetch_all(MYSQLI_ASSOC);
+                                        foreach ($rsnvc_all as $r_dvc) {
+                                            echo "<option value=" . $r_dvc["DVC_MA"] . ">" . $r_dvc["DVC_MA"] . ' - ' . $r_dvc["DVC_DIACHI"] . ' - ' . date('d/m/Y', strtotime($r_dvc["DVC_TGBATDAU"])) . "</option>";
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div> -->
+                        <div id="dvcName" class="col-12 d-flex align-items-center mt-2" style="display: none;"></div>
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <input type="hidden" name="mahd" value="<?php echo $mahd; ?>">
+                            <button class="btn btn-primary text-white mt-2 ms-3" type="submit">Cập nhật</button>
+                        </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
                     <script>
                       function showTextarea() {
                         var selectValue = document.getElementById("mySelect").value;
@@ -490,6 +446,39 @@
       },
     });
   </script>
+  <script>
+function showTextarea() {
+    var select = document.getElementById("mySelect");
+    var textarea = document.getElementById("myTextarea");
+    var selectDVC = document.getElementById("myTextarea1");
+    var dvcName = document.getElementById("dvcName");
+    if (select.value == "2") { // Giả sử "2" là mã trạng thái "Đang giao hàng"
+        textarea.style.display = "none";
+        selectDVC.style.display = "block";
+
+        // Gửi yêu cầu AJAX đến server để lấy tên nhà vận chuyển
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "get_delivery_name.php?mahd=" + <?php echo $mahd; ?>, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                dvcName.innerHTML = xhr.responseText;
+                dvcName.style.display = "block";
+            }
+        };
+        xhr.send();
+    } else if (select.value == "0") { // "0" có thể là trạng thái khác mà bạn muốn hiển thị textarea
+        textarea.style.display = "block";
+        selectDVC.style.display = "none";
+        dvcName.style.display = "none";
+    } else {
+        textarea.style.display = "none";
+        selectDVC.style.display = "none";
+        dvcName.style.display = "none";
+    }
+}
+</script>
+
+
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

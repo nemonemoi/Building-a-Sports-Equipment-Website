@@ -1,30 +1,21 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
-
-
 <?php
   session_start();
 ?>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>
     Danh sách nhân viên
   </title>
@@ -39,69 +30,51 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show   bg-gray-100">
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-<!-- Đoạn aside -->
-
 <?php
-    $active = 'nv'; 
+    $active='nv';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #FFC125;">
 
-  <main class="main-content position-relative border-radius-lg ">
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh sách nhân viên</li>
-          </ol>
-          <h6 class="font-weight-bolder text-dark mb-0">Danh sách nhân viên</h6>
-        </nav>
-        <!-- Đoạn này -->
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5" style="display: flex; flex-wrap: nowrap;">
+          <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-dark" href="dashboard.php">Trang</a>
+            </li>
+            <li class="breadcrumb-item text-sm"><a href="staff.php" class="text-dark">Nhân viên</li>
+        </ol>
+        <h6 class="font-weight-bolder text-dark mb-0">Danh sách nhân viên</h6>
+    </nav>
+</div>
+<style>
+    .ps__thumb-x {
+    display: none !important;
+}
+    .ps__rail-x {
+    display: none !important;
+}
+</style>
+
+       <!-- Đoạn này -->
+        <div style="margin-left: -300px; margin-top: 20px !important;" class="mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here..."> -->
+              
             </div>
           </div>
-          <!-- <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape text-center rounded-circle">
-                <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-white text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-white mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-white font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul> -->
+  
           <?php require 'nav.php'; ?>
         </div>
 
       </div>
     </nav>
+
     <!-- End Navbar -->
     <div class="container-fluid py-4">
     <div class="row">
@@ -112,7 +85,7 @@
         <!-- Nguyên đống này la mot danh muc -->
               <div class="row">
                 <div class="col-12">
-                  <div class="card mb-4">
+                  <div class="card mb-4" style="margin-left: 60px; margin-top: -20px;" >
                     <form action="#" method="get">
                     <div class="card-header pb-2 d-flex align-items-center">
                       <div class="col-3">
@@ -121,11 +94,12 @@
                       <!-- <div class="col-6"></div> -->
                       <div class="col-9 d-flex align-items-center  justify-content-end">
                         <div class="input-group w-30 me-3">
-                          <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                          
                           <input type="text" name="timkiem" class="form-control" placeholder="Nhập tên nhân viên cần tìm..">
+                          <button type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
                         </div>
-                        <button type="submit" class="btn btn-primary text-white font-weight-bold text-md ms-0 mt-3">
-                          Tìm
+                        <button type="submit" class="btn btn-warning text-dark font-weight-bold text-md ms-0 mt-3">
+                          Tất cả
                         </button>
                       </div>
                     </div>
@@ -148,11 +122,11 @@
                           <thead>
                             <tr>
                               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nhân viên</th>
-                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                              <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th> -->
                               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chức vụ</th>
                               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">SĐT</th>
                               <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày tuyển</th>
+                              <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày tuyển</th> -->
                               <th class="text-secondary opacity-7"></th>
                               <th class="text-secondary opacity-7"></th>
                             </tr>
@@ -171,8 +145,15 @@
                                       <td>
                                         <div class="d-flex px-1 py-1">
                                             <!-- hinh anh nhan vien -->
-                                          <div>
+                                            <div>
                                             <?php
+                                              $avatar_url = "../assets/img/staff_img/" . $row["NV_AVATAR"];
+                                              echo "<img src='{$avatar_url}' class='avatar avatar-xl me-3' alt='cus'>";
+                                            ?> 
+                                          </div>
+
+                                          <div>
+                                            <!--?php
                                               if($row["NV_AVATAR"]==null){
                                                 $file = "macdinh.jpg";
                                               } else {
@@ -180,7 +161,7 @@
                                               } 
                                               $avatar_url = "../assets/img/staff_img/" . $file;
                                             //   echo "<img src='{$avatar_url}' class='avatar avatar-xl me-3' alt='user1'>";
-                                            ?> 
+                                            ?--> 
                                             
                                           </div>
                                           <!-- ngaysinh -->
@@ -191,19 +172,19 @@
                                         </div>
                                       </td>
                                       <!-- id -->
-                                      <td class="align-middle text-center">
+                                     <!--  <td class="align-middle text-center">
                                         <p class="text-sm font-weight-bold mb-0"><?php echo $tknvid; ?></p>
-                                      </td>
+                                      </td> -->
                                       <!-- vaitro -->
                                       <td>
                                         <?php
                                             if($row["CV_MA"] == "2") {
                                               ?>
-                                                <p class="text-sm font-weight-bold mb-0">Nhân viên bán hàng</p>
+                                                <p class="text-sm font-weight-bold mb-0">Nhân viên</p>
                                               <?php
                                             } else if($row["CV_MA"] == 3) {
                                               ?>
-                                                <p class="text-sm font-weight-bold mb-0">Nhân viên kế toán</p>
+                                                <p class="text-sm font-weight-bold mb-0">Nhân viên</p>
                                               <?php
                                             } else{
                                               ?>
@@ -221,9 +202,9 @@
                                         <p class="text-sm font-weight-bold mb-0"><?php echo $row["NV_EMAIL"]; ?></p>
                                       </td>
                                       <!-- ngay them -->
-                                      <td class="align-middle text-center">
+                                     <!--  <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-bold"><?php echo date('d/m/Y', strtotime($row["NV_NGAYTUYEN"])); ?></span>
-                                      </td>
+                                      </td> -->
                                       <td class="align-middle">
                                       <form method="post" action="edit_staff.php">
                                           <input type="hidden" name="nvid" value="<?php echo $row["NV_MA"]; ?>">
@@ -238,7 +219,7 @@
                                           <?php
                                             if($row["NV_MA"] == $_SESSION["nvid"]) {
                                               ?>
-                                                <a class="mt-3 ms-n4 text-secondary font-weight-bold text-sm">
+                                                <a style="margin-left: -37px !important;" class="mt-3 ms-n4 text-secondary font-weight-bold text-sm">
                                                   Xoá
                                                 </a>
                                               <?php
@@ -268,86 +249,14 @@
               </div>
               <?php
         ?>
-        <a href="add_staff.php" class="btn btn-link mt-n3">+ Thêm nhân viên</a>
+        <a href="add_staff.php" class="btn btn-link text-dark font-weight-bold mt-n3">+ Thêm nhân viên</a>
       </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>
-  <!-- </main>
-  <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a>
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3 ">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">Argon Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i class="fa fa-close"></i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
+ 
       </div>
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0 overflow-auto">
-        <!-- Sidebar Backgrounds -->
-        <!-- <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
-        </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-          </div>
-        </a> -->
-        <!-- Navbar Fixed -->
-        <!-- <hr class="horizontal dark my-sm-4">
-        <div class="mt-2 mb-5 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  -->
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>

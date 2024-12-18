@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Header</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Header</h1>
+<code>Header()</code>
+<h2>설명</h2>
+이 메소드를 헤더를 만들때 사용합니다. AddPage() 에 의해 자동으로 호출되므로
+프로그램내에서 일부러 호출할 필요는 없습니다. FPDF 내에는 구현되지 않은채 존재하므로
+별도의 처리를 원한다면 서브클래스를 구현해서 메소드를 오버라이드 해야합니다.
+<h2>예제</h2>
+<div class="doc-source">
+<pre><code>class PDF extends FPDF
+{
+function Header()
+{
+    //Select Arial bold 15
+    $this-&gt;SetFont('Arial','B',15);
+    //Move to the right
+    $this-&gt;Cell(80);
+    //Framed title
+    $this-&gt;Cell(30,10,'Title',1,0,'C');
+    //Line break
+    $this-&gt;Ln(20);
+}
+}</code></pre>
+</div>
+<h2>참고</h2>
+<a href="footer.htm">Footer()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

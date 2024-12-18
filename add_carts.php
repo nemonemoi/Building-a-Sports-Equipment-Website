@@ -28,7 +28,7 @@ session_start();
                     if($conn->query($sql)==true){
                          $message = "Cập nhật giỏ hàng thành công";
                          echo "<script type='text/javascript'>alert('$message');</script>";
-                         header('Refresh: 0;url=cart.php');
+                         header('Refresh: 0;url=index.php');
                     } else{
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
@@ -41,13 +41,16 @@ session_start();
                 $result_maxgh = $conn->query($sql_maxgh);
                 $maxgh = $result_maxgh->fetch_assoc()["maxgh"];
                 $idgh = $maxgh+1;
-                $sql_insert = "INSERT INTO gio_hang VALUES ('".$idgh."', '".$khid."')";
+                $sql_insert = "INSERT INTO gio_hang (GH_MA, KH_MA) 
+               VALUES ('".$idgh."', '".$khid."')";
+
+                // $sql_insert = "INSERT INTO gio_hang VALUES ('".$idgh."', '".$khid."')";
                 if($conn->query($sql_insert)==true){
                     $sql_ctgh = "insert into chitiet_gh values('".$spid."', '".$idgh."', '".$slsp."')";
                     if($conn->query($sql_ctgh) == true){
                         $message = "Thêm vào giỏ hàng thành công";
                         echo "<script type='text/javascript'>alert('$message');</script>";
-                        header('Refresh: 0;url=cart.php');
+                        header('Refresh: 0;url=index.php');
                     } else{
                         echo "Error: " . $sql_ctgh . "<br>" . $conn->error;
                     }

@@ -39,8 +39,8 @@ $repass ="";
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="primari-box registered-account">
                         <form class="new-account-box" id="ff1" name="form1" method="POST" action="login.php">
-                            <h3 class="box-subheading">Đăng nhập</h3>
-                            <div class="form-content">
+                            <h3 style="color: black;" class="box-subheading">Đăng nhập</h3>
+                            <div class="form-content" style="color: black;">
                                 <div class="form-group">
                                     Tên đăng nhập
                                     <input type="text" class="form-control" placeholder="Tài khoản" name="txtus" required >
@@ -49,11 +49,11 @@ $repass ="";
                                     Mật khẩu
                                     <input type="password" class="form-control" placeholder="Mật khẩu" name="password"required >
                                 </div>
-                                <div class="forget-password">
-                                    <p><a href="#">Forgot your password?</a></p>
+                                <div  class="forget-password">
+                                    <p style="color: black;"><a href="#">Forgot your password?</a></p>
                                 </div>
                                 <div class="submit-button">
-                                    <button type="submit" name="submit" class="btn btn-success" name="login" id="login">Đăng nhập</button>
+                                    <button type="submit" name="submit" class="btn btn-danger" name="login" id="login">Đăng nhập</button>
                                 </div>
                             </div>
                         </form>
@@ -64,8 +64,8 @@ $repass ="";
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="create-new-account">
                         <form class="new-account-box primari-box" id="ff2" name="form2" method="post" action="sign_up.php" enctype="multipart/form-data">
-                            <h3 class="box-subheading">Đăng ký tài khoản</h3>
-                            <div class="form-content">
+                            <h3 style="color: black;" class="box-subheading">Đăng ký tài khoản</h3>
+                            <div class="form-content" style="color: black;">
                                 <div class="form-group">
                                     Họ Tên
                                     <input type="text" class="form-control" placeholder="Nhập họ và tên" name="fullname" id="firstname" value="<?php echo $name;?>" required>
@@ -138,7 +138,7 @@ $repass ="";
                                     Xác nhận mật khẩu
                                     <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="repass" id="repass" value="<?php echo $repass;?>" required>
                                 </div>
-                                <button type="submit" name="dangky" class="btn btn-success">Đăng kí</button>
+                                <button type="submit" name="dangky" class="btn btn-danger">Đăng ký</button>
                                 <P style="color:red"><?php echo $kqdk; ?></p>
                         </form>
 

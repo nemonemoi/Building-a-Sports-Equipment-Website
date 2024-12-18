@@ -5,14 +5,14 @@
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center mb-4 me-4">
               <div class="icon icon-shape text-center rounded-circle">
-              <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
+              <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" style="margin-top: 10px;" class="rounded-circle avatar avatar-xl" alt='user'>
               </div>
             </li>
             <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
              <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-info text mb-0">Xin chào,</h7>
+                <h7 class="text-white text mb-0">Xin chào,</h7>
                 <h6 class="font-weight-bolder text-dark mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-dark font-weight-bold px-2 mt-n1 py-1">
+                <a href="log_out.php" class="btn btn-outline-dark text-dark font-weight-bold px-2 mt-n1 py-1">
                   <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
                   <i class="fas fa-sign-out-alt "></i>
                 </a>

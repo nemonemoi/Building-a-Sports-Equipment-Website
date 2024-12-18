@@ -111,7 +111,7 @@ if($nvpass != $nvrepass){
           
           $message = "Cập nhật nhân viên ".$nvname." thành công!";
           echo "<script type='text/javascript'>alert('$message');</script>";
-          header('Refresh: ;url=staff.php');
+          header('Location: staff.php');
       } else {
         echo "<br>Error: " . $sql . "<br>" . $conn->error;
       }

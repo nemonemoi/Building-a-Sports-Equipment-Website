@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Footer</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Footer</h1>
+<code>Footer()</code>
+<h2>설명</h2>
+페이지 푸터를 만들때 사용합니다. AddPage() 와 Close() 메소드에 의해서 자동으로 호출되므로,
+프로그램에서 직접 호출할 필요는 없습니다. FPDF 내에는 구현되지 않은채 존재하므로
+별도의 처리를 원한다면 서브클래스를 구현해서 메소드를 오버라이드 해야합니다.
+<h2>예제</h2>
+<div class="doc-source">
+<pre><code>class PDF extends FPDF
+{
+function Footer()
+{
+    //아래쪽에서 1.5 cm 떨어진 위치로 이동
+    $this-&gt;SetY(-15);
+    //기울어진 8크기의 Arial 선택
+    $this-&gt;SetFont('Arial','I',8);
+    //중간에 페이지 번호 출력
+    $this-&gt;Cell(0,10,'Page '.$this-&gt;PageNo(),0,0,'C');
+}
+}</code></pre>
+</div>
+<h2>참고</h2>
+<a href="header.htm">Header()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

@@ -1,5 +1,17 @@
 <!-- Products theo loại -->
 <div class="row">
+	<style>
+    .product-name {
+        display: block; /* Đảm bảo mỗi tên sản phẩm là một khối riêng */
+        height: 40px; /* Chiều cao cố định cho tên sản phẩm */
+        overflow: hidden; /* Ẩn phần chữ dư thừa */
+        text-overflow: ellipsis; /* Thêm dấu "..." nếu quá dài */
+        white-space: normal; /* Cho phép xuống dòng */
+        word-wrap: break-word; /* Ngắt dòng nếu quá dài */
+        font-size: 16px; /* Đặt kích thước chữ phù hợp */
+        line-height: 20px; /* Đảm bảo căn chỉnh dòng hợp lý */
+    }
+    </style>
 	<div class="col-xs-12">
 		<!-- TAB-BG-PRODUCT-AREA START -->
 		<div class="tab-bg-product-area">
@@ -30,14 +42,14 @@
 									<div class="overlay-content">
 										<ul>
 											<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
-											<li><a href="#" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
+											<li><a href="add_carts.php" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
 											<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 											<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="product-info">
-									<div class="customar-comments-box">
+									<!-- <div class="customar-comments-box">
 										<div class="rating-box">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -48,8 +60,8 @@
 										<div class="review-box">
 											<span>1 Review(s)</span>
 										</div>
-									</div>
-									<a href="single_products.php?id=<?php echo $row["SP_MA"]?>"><?php echo $row["SP_TEN"]?></a>
+									</div> -->
+									<a href="single_products.php?id=<?php echo $row["SP_MA"]?>" class="product-name"><?php echo $row["SP_TEN"]?></a>
                   <div class="price-box">
                     <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
                   </div>                   
@@ -101,7 +113,7 @@
 									</div>
 								</div>
 								<div class="product-info">
-									<div class="customar-comments-box">
+									<!-- <div class="customar-comments-box">
 										<div class="rating-box">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -112,7 +124,7 @@
 										<div class="review-box">
 											<span>1 Review(s)</span>
 										</div>
-									</div>
+									</div> -->
 									<a href="single_products.php?id=<?php echo $row["SP_MA"]?>"><?php echo $row["SP_TEN"]?></a>
                   <div class="price-box">
                     <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
@@ -167,7 +179,7 @@
 									</div>
 								</div>
 								<div class="product-info">
-									<div class="customar-comments-box">
+									<!-- <div class="customar-comments-box">
 										<div class="rating-box">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -178,7 +190,7 @@
 										<div class="review-box">
 											<span>1 Review(s)</span>
 										</div>
-									</div>
+									</div> -->
 									<a href="single_products.php?id=<?php echo $row["SP_MA"]?>"><?php echo $row["SP_TEN"]?></a>
                   <div class="price-box">
                     <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
@@ -201,9 +213,9 @@
 			<!-- TABS MENU START-->
 			<div class="tab-carousel-menu">
 				<ul class="nav nav-tabs product-bg-nav">
-					<li class="active"><a href="#women-tab" data-toggle="tab">Android</a></li>
-					<li><a href="#tops-tab" data-toggle="tab">iPhone</a></li>
-					<li><a href="#t-shirts" data-toggle="tab">Điện thoại phổ thông</a></li>
+					<li class="active"><a href="#women-tab" data-toggle="tab">Bóng</a></li>
+					<li><a href="#tops-tab" data-toggle="tab">Phụ kiện</a></li>
+					<li><a href="#t-shirts" data-toggle="tab">Dụng cụ</a></li>
 				</ul>
 			</div>
 			<!-- TABS MENU END-->

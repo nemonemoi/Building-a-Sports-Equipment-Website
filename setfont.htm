@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>SetFont</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>SetFont</h1>
+<code>SetFont(<b>string</b> family [, <b>string</b> style [, <b>float</b> size]])</code>
+<h2>설명</h2>
+문자를 출력할 글꼴을 설정합니다. 이 메소드는 텍스트를 출력하기 전에 반드시
+최소한 한번은 실행되어야 하며 그렇지 않을 경우 올바르지 않은 문서를 얻게 됩니다.
+<BR>
+글꼴은 표준 글꼴이나 AddFont() 메소드로 추가된 폰트를 사용할 수 있습니다.
+표준 글꼴은 윈도우즈의 cp1252(서유럽) 인코딩을 사용합니다(역자 주 : 굴림, 돋움 등은
+여기서 말하는 표준 글꼴이 아닙니다).
+<BR>
+이 메소드는 첫 페이지를 생성하기 전에 호출할 수 있으며 페이지가 변경되도 값은 유지됩니다.
+<BR>
+만약 현재 글꼴의 크기를 변경하고 싶은 거라면, 간단하게 SetFontSize() 를 호출하십시오.
+<BR>
+<BR>
+<B>주의: </B>글꼴 메트릭 파일은 반드시 접근이 가능해야 합니다.
+이를 위해선 파일이 다음 세 곳중 하나에 있어야 합니다:
+<UL>
+<LI><TT>FPDF_FONTPATH</TT>상수에 의해 정의된 디렉토리(상수가 정의되어 있을 때)
+<LI>fpdf.php 파일이 있는 디렉토리 하위에 존재하는 글꼴 디렉토리(글꼴 디렉토리가 있을 때)
+<LI><TT>include()</TT> 명령어로 불러올 수 있는 디렉토리
+</UL>
+FPDF_FONTPATH 정의 예제 (경로 끝에 반드시 슬래시를 붙일 것!):
+<div class="doc-source">
+<pre><code>define('FPDF_FONTPATH','/home/www/font/');
+require('fpdf.php');</code></pre>
+</div>
+만약 필요한 파일과 일치하는 파일을 찾지 못한다면 "Could not include font metric file"
+에러가 발생합니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>family</code></dt>
+<dd>
+글꼴 이름. AddFont() 에 의해 정의된 이름이나 표준 글꼴중 하나를 사용할 수 있습니다
+(대소문자 구분안함):
+<UL>
+<LI><TT>Courier</TT> (고정폭)
+<LI><TT>Helvetica</TT> or <TT>Arial</TT> (synonymous; sans serif)
+<LI><TT>Times</TT> (serif)
+<LI><TT>Symbol</TT> (symbolic)
+<LI><TT>ZapfDingbats</TT> (symbolic)
+</UL>
+빈 문자열도 가능하며, 빈 문자열일 경우엔 현재의 글꼴이 계속 유지됩니다.
+</dd>
+<dt><code>style</code></dt>
+<dd>
+글꼴 스타일. 가능한 값은 아래와 같습니다(대소문자 구분안함):
+<UL>
+<LI>빈 문자열: 보통
+<LI><TT>B</TT>: 굵게
+<LI><TT>I</TT>: 기울게
+<LI><TT>U</TT>: 밑줄
+</UL>
+기본값은 보통 이며, 조합도 가능합니다.
+<TT>Symbol</TT>과 <TT>ZapfDingbats</TT>에는 굵게하거나 기울게 하는 스타일이
+적용되지 않습니다.
+</dd>
+<dt><code>size</code></dt>
+<dd>
+포인트 단위의 글꼴 크기
+<BR>
+기본값은 현재 크기입니다. 만약 주어진 크기가 없다면 글꼴의 크기로 12를 얻습니다.
+</dd>
+</dl>
+<h2>예제</h2>
+<div class="doc-source">
+<pre><code>//Times regular 12
+$pdf-&gt;SetFont('Times');
+//Arial bold 14
+$pdf-&gt;SetFont('Arial','B',14);
+//볼드 스타일 제거
+$pdf-&gt;SetFont('');
+//Times 굵게 기울게 밑줄 14
+$pdf-&gt;SetFont('Times','BIU');</code></pre>
+</div>
+<h2>참고</h2>
+<a href="addfont.htm">AddFont()</a>,
+<a href="setfontsize.htm">SetFontSize()</a>,
+<a href="cell.htm">Cell()</a>,
+<a href="multicell.htm">MultiCell()</a>,
+<a href="write.htm">Write()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

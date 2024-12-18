@@ -6,6 +6,7 @@
 .owl-theme .owl-controls{
 	margin-top: 10px;
 	text-align: center;
+	
 }
 
 /* Styling Next and Prev buttons */
@@ -21,7 +22,7 @@
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
-	background: #869791;
+	background: transparent;
 	filter: Alpha(Opacity=50);/*IE7 fix*/
 	opacity: 0.5;
 }
@@ -31,6 +32,7 @@
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
 	text-decoration: none;
+
 }
 
 /* Styling Pagination*/

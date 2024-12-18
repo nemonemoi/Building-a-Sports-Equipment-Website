@@ -1,5 +1,17 @@
 <div class="row">
     <!-- FEATURED-PRODUCTS-AREA START -->
+    <style>
+    .product-name {
+        display: block; /* Đảm bảo mỗi tên sản phẩm là một khối riêng */
+        height: 40px; /* Chiều cao cố định cho tên sản phẩm */
+        overflow: hidden; /* Ẩn phần chữ dư thừa */
+        text-overflow: ellipsis; /* Thêm dấu "..." nếu quá dài */
+        white-space: normal; /* Cho phép xuống dòng */
+        word-wrap: break-word; /* Ngắt dòng nếu quá dài */
+        font-size: 16px; /* Đặt kích thước chữ phù hợp */
+        line-height: 20px; /* Đảm bảo căn chỉnh dòng hợp lý */
+    }
+    </style>
     <div class="featured-products-area">
         <div class="center-title-area">
             <h2 class="center-title">Sản phẩm nổi bật</h2>
@@ -34,24 +46,20 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="product-info">
-                                <div class="customar-comments-box">
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-empty"></i>
-                                    </div>
-                                    <div class="review-box">
-                                        <span>1 Review (s)</span>
-                                    </div>
+
+                                <div class="product-info">
+                                <a href="single_products.php?id=<?php echo $row["SP_MA"]?>" class="product-name"><?php echo $row["SP_TEN"]?></a>
+                                <div class="price-box">
+                                    <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
                                 </div>
+                            </div>
+
+                            <!-- <div class="product-info">
                                 <a href="single_products.php?id=<?php echo $row["SP_MA"]?>"><?php echo $row["SP_TEN"]?></a>
                                 <div class="price-box">
                                   <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 					<?php 

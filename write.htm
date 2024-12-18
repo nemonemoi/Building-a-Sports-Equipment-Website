@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Write</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Write</h1>
+<code>Write(<b>float</b> h, <b>string</b> txt [, <b>mixed</b> link])</code>
+<h2>설명</h2>
+이 메소드는 현재 위치에 문자열을 출력합니다. 출력도중 오른쪽 가장자리에 도달하면
+(혹은 \n 문자를 만나면) 줄을 바꾸고 다음 줄의 왼쪽 가장자리부터 텍스트를 계속 출력합니다.
+메소드를 종료하면 현재 위치는 끝 문자의 바로 옆이 됩니다.
+<BR>
+또한 텍스트에 링크를 출력하는 것도 가능합니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>h</code></dt>
+<dd>
+줄 높이
+</dd>
+<dt><code>txt</code></dt>
+<dd>
+출력할 문자열
+</dd>
+<dt><code>link</code></dt>
+<dd>
+URL이나 AddLink() 실행후 얻은 고유값
+</dd>
+</dl>
+<h2>예제</h2>
+<div class="doc-source">
+<pre><code>//보통의 글꼴로 시작
+$pdf-&gt;SetFont('Arial','',14);
+$pdf-&gt;Write(5,'Visit ');
+//밑줄이 쳐진 파란색 링크문자열을 출력
+$pdf-&gt;SetTextColor(0,0,255);
+$pdf-&gt;SetFont('','U');
+$pdf-&gt;Write(5,'www.fpdf.org','http://www.fpdf.org');</code></pre>
+</div>
+<h2>참고</h2>
+<a href="setfont.htm">SetFont()</a>,
+<a href="settextcolor.htm">SetTextColor()</a>,
+<a href="addlink.htm">AddLink()</a>,
+<a href="multicell.htm">MultiCell()</a>,
+<a href="setautopagebreak.htm">SetAutoPageBreak()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>SetTextColor</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>SetTextColor</h1>
+<code>SetTextColor(<b>int</b> r [, <b>int</b> g, <b>int</b> b])</code>
+<h2>설명</h2>
+텍스트 색상을 설정합니다. RGB 색상의 조합이나 그레이스케일로 표현할 수 있습니다.
+첫 페이지를 생성하기 전에 호출할 수 있으며, 설정된 값은 페이지를 변경해도 그대로 적용됩니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>r</code></dt>
+<dd>
+만약 <TT>g</TT>와 <TT>b</TT>가 주어진다면, 빨간색 색상이 됩니다.
+그렇지 않고 단독으로 쓰인다면 음영의 짙음으로 사용됩니다. 값은 0부터 255까지 가능합니다.
+</dd>
+<dt><code>g</code></dt>
+<dd>
+녹색 색상 (0부터 255까지 가능)
+</dd>
+<dt><code>b</code></dt>
+<dd>
+파란색 색상 (0부터 255까지 가능)
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="setdrawcolor.htm">SetDrawColor()</a>,
+<a href="setfillcolor.htm">SetFillColor()</a>,
+<a href="text.htm">Text()</a>,
+<a href="cell.htm">Cell()</a>,
+<a href="multicell.htm">MultiCell()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

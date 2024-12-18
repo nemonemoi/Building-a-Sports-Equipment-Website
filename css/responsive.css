@@ -45,9 +45,9 @@
 	padding: 0 20px;
 	font-size: 11px;
 }
-.drodown-mega-menu {
-	min-width: 850px;
-}
+/*.drodown-mega-menu {
+	min-width: 300px;
+}*/
 .nivo-caption{
 
 }
@@ -199,9 +199,9 @@ body.index-2 .category-menu-list ul li a i {
 	padding: 0 18px;
 	font-size:11px;
 }
-.drodown-mega-menu {
-  min-width: 720px;
-}
+/*.drodown-mega-menu {
+  min-width: 300px;
+}*/
 .slider-cap-text{
 	bottom:35px;
 	left:50px;

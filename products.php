@@ -9,6 +9,18 @@
 	?>
     <!-- main -->
     <!-- MAIN-CONTENT-SECTION START -->
+    <style>
+    .product-name {
+        display: block; /* Đảm bảo mỗi tên sản phẩm là một khối riêng */
+        height: 40px; /* Chiều cao cố định cho tên sản phẩm */
+        overflow: hidden; /* Ẩn phần chữ dư thừa */
+        text-overflow: ellipsis; /* Thêm dấu "..." nếu quá dài */
+        white-space: normal; /* Cho phép xuống dòng */
+        word-wrap: break-word; /* Ngắt dòng nếu quá dài */
+        font-size: 16px; /* Đặt kích thước chữ phù hợp */
+        line-height: 20px; /* Đảm bảo căn chỉnh dòng hợp lý */
+    }
+    </style>
     <section class="main-content-section">
       <div class="container">
 				<!-- HIỂN THỊ TÊN TRANG WEB -->
@@ -39,68 +51,7 @@
 							<!-- PRODUCT-CATEGORY-HEADER END -->
 
 							<!-- ======================================================= -->
-							<!-- HIỂN THỊ SP THEO DANH MỤC -->
-							<div class="product-category-title">
-								<!-- PRODUCT-CATEGORY-TITLE START -->
-								<h1>
-									<span class="cat-name">Điện thoại</span>
-									<span class="count-product">There are 13 products.</span>
-								</h1>
-								
-							</div>
-							<div class="product-shooting-area">
-								<div class="product-shooting-bar">
-									<div class="shoort-by" style="margin-left:10px;">
-										<label for="productShort">Sắp xếp</label>
-										<div class="short-select-option">
-											<select name="sortby" id="productShort">
-												<option value="">--</option>
-												<option value="">Giá thấp nhất</option>
-												<option value="">Giá cao nhất</option>
-												<option value="">Tên điện thoại từ A đến Z</option>
-												<option value="">Mới nhất</option>
-											</select>												
-										</div>
-									</div>
-									<div class="shoort-by" style="margin-left:10px;">
-										<label for="productShort">Hãng</label>
-										<div class="short-select-option">
-											<select name="sortby" id="productShort">
-												<option value="">--</option>
-												<?php
-													$sql_hang = "SELECT * FROM nha_san_xuat";
-													$result = $conn->query($sql_hang);
-													if ($result->num_rows > 0) {
-													$result = $conn->query($sql_hang);
-													$result_all = $result -> fetch_all(MYSQLI_ASSOC);
-													foreach ($result_all as $row) {
-														echo "<option value=" .$row["NSX_MA"]. ">".$row["NSX_TEN"]. "</option>";
-													}                          
-													} else {
-													echo "<option value=''>Không có dữ liệu</option>";
-													}
-												?>
-											</select>												
-										</div>
-									</div>
-									<div class="shoort-by" style="margin-left:10px;">
-										<label for="productShort">Tính năng</label>
-										<div class="short-select-option">
-											<select name="sortby" id="productShort">
-												<option value="">--</option>
-												<option value="">Sạc Nhanh (Từ 20W)</option>
-												<option value="">Sạc Siêu Nhanh (Từ 60W)</option>
-												<option value="">Sạc Không Dây</option>
-												<option value="">Kháng Nước, Bụi</option>
-												<option value="">Hỗ Trợ 5G</option>
-												<option value="">Bảo Mật Khuôn Mật 3D</option>
-											</select>												
-										</div>
-									</div>
-								</div>
-							</div>
 							
-						</div>
 						<!-- ======================================================================================== -->
 						<!-- ALL GATEGORY-PRODUCT START -->
 						<div class="all-gategory-product">
@@ -158,7 +109,7 @@
 												</div>
 											</div>
 											<div class="product-info">
-												<div class="customar-comments-box">
+												<!-- <div class="customar-comments-box">
 													<div class="rating-box">
 														<i class="fa fa-star"></i>
 														<i class="fa fa-star"></i>
@@ -169,8 +120,8 @@
 													<div class="review-box">
 														<span>1 Review(s)</span>
 													</div>
-												</div>
-												<a href="single_products.php?id=<?php echo $row["SP_MA"]?>"><?php echo $row["SP_TEN"]?></a>
+												</div> -->
+												<a href="single_products.php?id=<?php echo $row["SP_MA"]?>" class="product-name"><?php echo $row["SP_TEN"]?></a>
                         <div class="price-box">
                           <span class="price"><?php echo $row["SP_GIA"] ?> VNĐ</span>
                         </div>

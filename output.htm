@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Output</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Output</h1>
+<code><b>string</b> Output([<b>string</b> name, <b>string</b> dest])</code>
+<h2>설명</h2>
+주어진 목적지 파라미터에 따라 문서를 저장하거나 웹브라우저로 전송합니다.
+웹브라우저로 전송시에는 플러그인에 의해서 바로 출력이 되거나 "다른 이름으로 저장"을
+할 수 있게 됩니다.
+<BR>
+문서를 종료할 필요가 있다면 Close() 를 먼저 호출합니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>name</code></dt>
+<dd>
+파일명. 입력하지 않으면 <TT>doc.pdf</TT>이란 이름으로
+웹브라우저(목적지값 <TT>I</TT>)로 문서를 전송합니다.
+</dd>
+<dt><code>dest</code></dt>
+<dd>
+문서를 보낼 곳. 다음 값들 중 하나를 선택할 수 있습니다:
+<UL>
+<LI><TT>I</TT>: 파일을 브라우저로 보냅니다. 가능하다면 플러그인이 사용됩니다.
+생성된 PDF를 저장하게 될 때엔 <TT>name</TT>에서 주어진 이름이 파일명으로 사용됩니다.
+<LI><TT>D</TT>: 브라우저로 보내고 <TT>name</TT>의 이름으로 강제로
+다운로드하도록 합니다.
+<LI><TT>F</TT>: <TT>name</TT>에서 주어진 이름으로 로컬파일로 저장합니다.
+<LI><TT>S</TT>: 문서를 문자열로 반환합니다. <TT>name</TT>값은 사용하지 않습니다.
+</UL>
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="close.htm">Close()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

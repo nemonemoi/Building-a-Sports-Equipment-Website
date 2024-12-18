@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
   <title>
     Thay đổi ảnh đại diện
   </title>
@@ -36,23 +31,24 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show bg-gray-100">
-  <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div>
-  <?php
-    $active = 'tttk';
+<?php
+    $active='tttk';
     require 'aside.php';
   ?>
-  <div class="main-content position-relative max-height-vh-100 h-100">
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show" style="background-color: #CD5C5C;">
+  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
+    <span class="mask bg-primary opacity-5"></span> -->
+  </div>
+  
+  <div class="main-content position-relative max-height-vh-100 h-100" style="margin-top: -10px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.php">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Thay đổi ảnh đại diện</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="#">Trang</a></li>
+            <li class="breadcrumb-item text-sm "><a href="profile.php" class="text-white">Thông tin tài khoản</li>
           </ol>
           <h6 class="font-weight-bolder text-white mb-0">Thay đổi ảnh đại diện</h6>
         </nav>
@@ -96,7 +92,8 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div style="margin-top: 0; !important" class="card shadow-lg mx-4 card-profile-bottom">
+    <!-- <div style="margin-top: 0; !important" class="card shadow-lg mx-4 card-profile-bottom"> -->
+      <div style="margin-top: 10px; !important" class="card shadow-lg mx-4 card-profile-bottom">
       <!-- <div class="card-body p-3">
         <div class="row gx-4">
           <div class="col-auto">
@@ -145,7 +142,7 @@
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-md-8">
-          <div class="card">
+          <div class="card" style="margin-top: 5px; margin-left: 25px;">
               <?php
 
                 $nvid = $_SESSION["nvid"];
@@ -210,7 +207,7 @@
                     <div class="col-12 card-header pb-2 d-flex align-items-center">
                         <div class="col-md-12">                                                            
                             <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-lg btn-primary text-white btn-lg w-100 mt-4 mb-0">Xác nhận thay đổi</button>
+                                <button type="submit" style="background-color: #CD5C5C;" class="btn btn-lg text-white btn-lg w-100 mt-4 mb-0">Xác nhận thay đổi</button>
                             </div>
                         </div>
                     </div>
@@ -224,7 +221,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card card-profile">
+          <div class="card card-profile" style="margin-top: 5px;">
             <!-- <img src="../assets/img/bgr-profile.jpg" alt="Image placeholder" class="card-img-top"> -->
             <div class="row justify-content-center">
               <div class="col-4 col-lg-4 order-lg-2">
@@ -237,7 +234,7 @@
             </div>
             <div class="card-header text-center border-0 px-6 pt-0 pt-lg-2 pb-4 pb-lg-3">
               <div class="d-flex justify-content-center">
-                <a href="javascript:;" class="btn btn-sm btn-primary mb-0 d-none d-lg-block">Thay đổi ảnh đại diện</a>
+                <a href="javascript:;" style="background-color: #CD5C5C;" class="btn text-white btn-primary mb-0 d-none d-lg-block">Thay đổi ảnh đại diện</a>
               </div>
               <div class="d-flex justify-content-center mt-2">
                 <a href="log_out.php" class="btn btn-sm btn-dark mb-0 d-none d-lg-block">Đăng xuất</a>
@@ -246,7 +243,7 @@
             <div class="card-body pt-0">
               <div class="row">
                 <div class="col">
-                  <div class="d-flex justify-content-center">
+                  <!-- <div class="d-flex justify-content-center">
                     <div class="d-grid text-center">
                       <span class="text-lg font-weight-bolder">29</span>
                       <span class="text-sm opacity-8">Sản phẩm</span>
@@ -258,20 +255,20 @@
                     <div class="d-grid text-center">
                       <span class="text-lg font-weight-bolder">100</span>
                       <span class="text-sm opacity-8">Bình luận</span>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
               <div class="text-center mt-3">
-                <h5>
+                <h5 class="text-bold">
                   <?php echo $nvhoten; ?><span class="font-weight-light"></span>
                 </h5>
                 <div class="h6 mt-3">
                   <i class="ni business_briefcase-24 mr-2"></i><?php echo $tkvt; ?>
                 </div>
                 <div class="mt-n2">
-                  <i class="ni education_hat mr-2"></i>Cửa hàng điện thoại BRIGHT MOBILE
-                </div>
+                  <i class="ni education_hat mr-2"></i>Cửa hàng dụng cụ thể thao じゃな、sportsman
+                </div><br>
               </div>
             </div>
           </div>

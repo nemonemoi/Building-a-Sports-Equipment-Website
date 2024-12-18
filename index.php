@@ -1,15 +1,53 @@
+
+
 <!doctype html>
 <html lang="en">
+<style>
+         .video-container {
+            display: flex; /* Sử dụng Flexbox để xếp các video cạnh nhau */
+            justify-content: center; /* Canh giữa các video theo chiều ngang */
+            align-items: center; /* Canh giữa các video theo chiều dọc */
+            gap: 40px; /* Khoảng cách giữa các video */
+            padding: 20px; /* Khoảng cách từ các video đến viền của container */
+            background-color: transparent; /* Màu nền của khu vực chứa video */
+        }
+
+        /* Thiết lập kích thước video */
+        .video-banner {
+            width: 100%; /* Cho video chiếm toàn bộ chiều rộng của phần tử cha */
+            max-width: 550px; /* Giới hạn chiều rộng tối đa của mỗi video */
+            height: auto; /* Để video tự điều chỉnh chiều cao */
+       }
+       
+
+    </style>            
 
 <?php include "head.php" ?>
-
+<link rel="icon" href="../img/icon.png" type="image/x-icon/">
 <body>
     <?php
 		include "header.php";
 	?>
+
+    
+    
+    <!-- Thêm video vào đầu trang và bao quanh bằng thẻ div có class video-container -->
+    <div class="video-container">
+        <!-- Video đầu tiên -->
+        <video class="video-banner" controls loop autoplay muted>
+            <source src="video/first.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+
+        <!-- Video thứ hai -->
+        <video class="video-banner" controls loop autoplay muted>
+            <source src="video/mit.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+    </div>
     <!-- main -->
     <!-- MAIN-CONTENT-SECTION START -->
-    <section class="main-content-section">
+    <section style="margin-top: -10px;" class="main-content-section">
         <div class="container">
             <!-- MAIN-SLIDER-AREA START -->
             <?php include "slider.php"; ?>
@@ -27,13 +65,13 @@
                 <!-- ADD-TWO-BY-ONE-COLUMN START -->
                 <div class="add-two-by-one-column">
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                        <div class="tow-column-add zoom-img">
-                            <a href="#"><img src="assets/img/slides/slide7.png" alt="shope-add" /></a>
+                        <div class="tow-column-add zoom-img">  <!-- banner 2-->
+                            <a href="#"><img src="assets/img/slides/slidee7.jpg" alt="shope-add" /></a> <!-- banner 2-->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="one-column-add zoom-img">
-                            <a href="#"><img src="assets/img/slides/ban1.png" alt="shope-add" /></a>
+                            <a href="#"><img src="assets/img/slides/ban1.jpg" alt="shope-add" /></a>
                         </div>
 												
                     </div>
@@ -44,8 +82,8 @@
 						<!-- sản phẩm nổi bật -->
 						<?php include "featured_products.php" ?>
 
-						<!-- Products theo loại -->
-						<?php include "cate_products.php" ?>
+						<!-- Products theo loại co bg moi them-->
+						<?php include "cate_products.php" ?> 
 
 
 					<?php include "selling_products.php" ?>
@@ -57,14 +95,14 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <!-- ONEHALF-ADD START -->
                         <div class="onehalf-add-shope zoom-img">
-                            <a href="#"><img src="assets/img/slides/shop_now.png" alt="shope-add" /></a>
+                            <a href="#"><img src="assets/img/slides/shop_now0.jpg" alt="shope-add" /></a>
                         </div>
                         <!-- ONEHALF-ADD END -->
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <!-- ONEHALF-ADD START -->
                         <div class="onehalf-add-shope zoom-img">
-                            <a href="#"><img src="assets/img/slides/shop_now2.png" alt="shope-add" /></a>
+                            <a href="#"><img src="assets/img/slides/shop_now1.jpg" alt="shope-add" /></a>
                         </div>
                         <!-- ONEHALF-ADD END -->
                     </div>
@@ -74,6 +112,8 @@
         </div>
     </section>
     <!-- MAIN-CONTENT-SECTION END -->
+
+   
 
     <?php 
 require 'tintuc.php';
@@ -119,25 +159,7 @@ include "footer.php";
     new WOW().init();
     </script>
 
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-    function initialize() {
-        var mapOptions = {
-            zoom: 8,
-            scrollwheel: false,
-            center: new google.maps.LatLng(10.031157, 105.769171)
-        };
-        var map = new google.maps.Map(document.getElementById('googleMap'),
-            mapOptions);
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            map: map
-        });
 
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
     <!-- main js -->
     <script src="js/main.js"></script>
 

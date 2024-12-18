@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>SetDisplayMode</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>SetDisplayMode</h1>
+<code>SetDisplayMode(<b>mixed</b> zoom [, <b>string</b> layout])</code>
+<h2>설명</h2>
+뷰어에서 문서를 표현할 방법을 정의합니다. 줌 크기를 설정해서 화면을 페이지에 맞출 것인지
+너비를 맞출 것인지, 실제 크기로 볼 것인지 혹은 뷰어의 기본값(Acrobat 의 설정메뉴에서 정의한)
+으로 볼 것인지에 대한 줌 값을 설정할 수 있습니다.
+단면으로 볼 것인지 연속적인 면으로 볼 것인지 양면보기 혹은 뷰어 기본값으로 볼 것인지에 대한
+페이지 레이아웃도 설정할 수 있습니다.
+<BR>
+기본값은 폭 맞춤과 연속보기 입니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>zoom</code></dt>
+<dd>
+사용할 줌. 다음 값들 중 하나를 선택할 수 있습니다:
+<UL>
+<LI><TT>fullpage</TT>: 페이지에 맞춤
+<LI><TT>fullwidth</TT>: 너비에 맞춤
+<LI><TT>real</TT>: 실제 크기(100% 줌과 동일)
+<LI><TT>default</TT>: 뷰어의 기본값
+</UL>
+혹은 줌의 정도를 숫자로 지정할 수도 있습니다.
+</dd>
+<dt><code>layout</code></dt>
+<dd>
+페이지 레이아웃. 가능한 값은 다음과 같습니다:
+<UL>
+<LI><TT>single</TT>: 단면 - 한번에 한 페이지씩
+<LI><TT>continuous</TT>: 연속
+<LI><TT>two</TT>: 양면 보기
+<LI><TT>default</TT>: 뷰어의 기본값 사용
+</UL>
+기본값은 <TT>continuous</TT> 입니다.
+</dd>
+</dl>
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

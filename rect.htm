@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>Rect</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>Rect</h1>
+<code>Rect(<b>float</b> x, <b>float</b> y, <b>float</b> w, <b>float</b> h [, <b>string</b> style])</code>
+<h2>설명</h2>
+사각형을 출력합니다. 경계선만 그리거나(경계선만) 색을 채우거나(경계선 없이)
+혹은 둘 다 가능합니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>x</code></dt>
+<dd>
+좌측 상단 꼭지점의 가로 좌표
+</dd>
+<dt><code>y</code></dt>
+<dd>
+좌측 상단 꼭지점의 세로 좌표
+</dd>
+<dt><code>w</code></dt>
+<dd>
+너비
+</dd>
+<dt><code>h</code></dt>
+<dd>
+높이
+</dd>
+<dt><code>style</code></dt>
+<dd>
+출력 스타일. 가능한 값은 다음과 같습니다:
+<UL>
+<LI><TT>D</TT> 혹은 빈 문자열: 선그리기. 이것이 기본값입니다.
+<LI><TT>F</TT>: 색상 채우기
+<LI><TT>DF</TT> or <TT>FD</TT>: 선그리고 색상 채우기
+</UL>
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="setlinewidth.htm">SetLineWidth()</a>,
+<a href="setdrawcolor.htm">SetDrawColor()</a>,
+<a href="setfillcolor.htm">SetFillColor()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

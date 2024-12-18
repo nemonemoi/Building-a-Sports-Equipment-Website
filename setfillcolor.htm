@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>SetFillColor</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>SetFillColor</h1>
+<code>SetFillColor(<b>int</b> r [, <b>int</b> g, <b>int</b> b])</code>
+<h2>설명</h2>
+채우기 동작(색상이 있는 사각형이나 셀 배경색)에 사용할 색상을 설정합니다.
+RGB의 조합이나 흑백음영으로 표현할 수 있습니다. 첫 페이지를 생성하기 전에 호출할 수 있으며,
+페이지를 변경해도 값은 유지됩니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>r</code></dt>
+<dd>
+<TT>g</TT>와 <TT>b</TT>가 주어진다면, 빨간색; 그렇지 않다면 음영 레벨을 가리킵니다.
+0 에서 255까지 가능합니다.
+</dd>
+<dt><code>g</code></dt>
+<dd>
+녹색 (0 ~ 255).
+</dd>
+<dt><code>b</code></dt>
+<dd>
+파란색 (0 ~ 255).
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="setdrawcolor.htm">SetDrawColor()</a>,
+<a href="settextcolor.htm">SetTextColor()</a>,
+<a href="rect.htm">Rect()</a>,
+<a href="cell.htm">Cell()</a>,
+<a href="multicell.htm">MultiCell()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

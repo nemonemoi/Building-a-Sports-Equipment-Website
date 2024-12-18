@@ -1,41 +1,49 @@
 <?php
 session_start();
 require 'connect.php';
-$spid = $_POST["idsprm"];
-$khid = $_SESSION["khid"];
 
-$sql = "select gh.GH_MA 
-            from gio_hang gh
-            join chitiet_gh ctgh on ctgh.GH_MA=gh.GH_MA 
-            where  gh.KH_MA= {$khid} and ctgh.SP_MA= {$spid}";
-
-$result_magh = $conn->query($sql);
-$row = $result_magh->fetch_assoc();
-$ghma = $row["GH_MA"];
-
-if(isset($_POST['remove']))
-{
-    $sql = "delete from chitiet_gh where SP_MA = $spid and GH_MA = $ghma";
-    if ($conn->query($sql)==true){
-        $message = "Đã xoá sản phẩm ra khỏi giỏ hàng";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        header('Refresh: 0;url=cart.php');
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-          
+// Kiểm tra xem dữ liệu từ form và thông tin người dùng có hợp lệ không
+if (!isset($_POST["idsprm"]) || !isset($_SESSION["khid"])) {
+    echo "Thiếu thông tin sản phẩm hoặc người dùng.";
+    exit;
 }
-if(isset($_POST['update']))
-{
-    $sl = intval($_POST["qty"]);
-    $sql = "update chitiet_gh set CTGH_SOLUONG = $sl where SP_MA = $spid and GH_MA = $ghma";
-    if ($conn->query($sql)==true){
-        $message = "Đã cập nhật số lượng sản phẩm";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        header('Refresh: 0;url=cart.php');
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
 
+$spid = intval($_POST["idsprm"]); // Chuyển đổi sang số nguyên
+$khid = intval($_SESSION["khid"]); // Chuyển đổi mã khách hàng sang số nguyên
+
+// Lấy mã giỏ hàng liên quan đến khách hàng và sản phẩm
+$sql = "SELECT gh.GH_MA 
+        FROM gio_hang gh
+        JOIN chitiet_gh ctgh ON ctgh.GH_MA = gh.GH_MA 
+        WHERE gh.KH_MA = ? AND ctgh.SP_MA = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ii", $khid, $spid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $ghma = intval($row["GH_MA"]); // Lấy mã giỏ hàng
+
+    // Kiểm tra nếu người dùng muốn xóa sản phẩm
+    if (isset($_POST['remove'])) {
+        $delete_sql = "DELETE FROM chitiet_gh WHERE SP_MA = ? AND GH_MA = ?";
+        $delete_stmt = $conn->prepare($delete_sql);
+        $delete_stmt->bind_param("ii", $spid, $ghma);
+
+        if ($delete_stmt->execute()) {
+            echo "Sản phẩm đã được xóa khỏi giỏ hàng."; // Trả về thông báo thành công
+        } else {
+            echo "Lỗi khi xóa sản phẩm: " . $conn->error; // Trả về thông báo lỗi
+        }
+        $delete_stmt->close();
+    } else {
+        echo "Yêu cầu không hợp lệ.";
+    }
+} else {
+    echo "Không tìm thấy giỏ hàng hoặc sản phẩm.";
 }
+
+$stmt->close();
+$conn->close();
 ?>

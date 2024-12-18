@@ -1,4 +1,7 @@
 <!-- FOOTER-TOP-AREA START -->
+<?php
+        include "chatbot.php";
+    ?>
 <section class="footer-top-area">
 			<div class="container">
 				<div class="footer-top-container">
@@ -8,7 +11,7 @@
 							<div class="footer-top-left">
 								<!-- NEWSLETTER-AREA START -->
 								<div class="newsletter-area">
-									<h2>Bản tin mới nhất</h2>
+									<h2>Bảng tin mới nhất</h2>
 									<p>Đăng kỳ là thành viên để có thể nhận nhiều tin tức về các sản phẩm mới nhất, ưu đãi đặt biệt và nhiều thông tin khuyến mãi lớn.</p>
 									<form action="#">
 										<div class="form-group newsletter-form-group">
@@ -21,7 +24,7 @@
 								<!-- ABOUT-US-AREA START -->
 								<div class="about-us-area">
 									<h2>Về chúng tôi</h2>
-									<p>Bright Mobile luôn luôn mang đến cho khách hàng những trãi nghiệm mua sắm tuyệt vời, đội ngũ nhân viên nhiệt tình.</p>
+									<p>じゃな、sportsman luôn luôn mang đến cho khách hàng những trãi nghiệm mua sắm tuyệt vời, đội ngũ nhân viên nhiệt tình.</p>
 								</div>
 								<!-- ABOUT-US-AREA END -->
 								<!-- FLLOW-US-AREA START -->
@@ -42,15 +45,15 @@
 							<!-- FOOTER-TOP-RIGHT-1 START -->
 							<div class="footer-top-right-1">
 								<div class="row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-sm">
-										<!-- STATICBLOCK START -->
-										<div class="staticblock">
+									<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-sm">
+										 STATICBLOCK START -->
+										<!-- <div class="staticblock">
 											<h2>Thông tin</h2>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s<br />when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-										</div>
+										</div> -->
 										<!-- STATICBLOCK END -->
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									
+									<div class="col-lg-4 col-md-4 col-sm-6 col-lg-6">
 										<!-- STORE-INFORMATION START -->
 										<div class="Store-Information">
 											<h2>Thông tin cửa hàng</h2>
@@ -60,7 +63,7 @@
 														<i class="fa fa-map-marker"></i>
 													</div>
 													<div class="info-text">
-														<p>403C/5, An Khánh, Ninh Kiều, Cần Thơ</p>
+														<p>44 đường 3/2, Xuân Khánh, Ninh Kiều, Cần Thơ</p>
 													</div>
 												</li>
 												<li>
@@ -68,7 +71,7 @@
 														<i class="fa fa-phone"></i>
 													</div>
 													<div class="info-text call-lh">
-														<p>Phone: 0123-456-789</p>
+														<p>Phone: 0789-643-631</p>
 													</div>
 												</li>
 												<li>
@@ -76,7 +79,7 @@
 														<i class="fa fa-envelope-o"></i>
 													</div>
 													<div class="info-text">
-														<p>Email : <a href="brightMobile.ct@gmail.com"><i class="fa fa-angle-double-right"></i> brightmobile.ct@gmail.com</a></p>
+														<p>Email : <a href="@gmail.com"><i class="fa fa-angle-double-right"></i> janasportsman@gmail.com</a></p>
 													</div>
 												</li>
 											</ul>
@@ -104,9 +107,9 @@
 											<div class="single-f-widget">
 												<h2>Danh mục</h2>
 												<ul>
-													<li><a href="category.php?maloaisp=1"><i class="fa fa-angle-double-right"></i>Android </a></li>
-													<li><a href="category.php?maloaisp=2"><i class="fa fa-angle-double-right"></i>iPhone (iOS)</a></li>
-													<li><a href="category.php?maloaisp=3"><i class="fa fa-angle-double-right"></i>Điện thoại thông dụng</a></li>
+													<li><a href="category.php?maloaisp=1"><i class="fa fa-angle-double-right"></i>Bóng </a></li>
+													<li><a href="category.php?maloaisp=2"><i class="fa fa-angle-double-right"></i>Phụ kiện thể thao</a></li>
+													<li><a href="category.php?maloaisp=3"><i class="fa fa-angle-double-right"></i>Dụng cụ thể thao</a></li>
 													<!-- <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>kids</a></li> -->
 												</ul>
 											</div>
@@ -158,9 +161,18 @@
 				</div>
 			</div>
 		</section>
+		<!-- <div class="scroll-to-top">
+							<a href="#" class="bstore-scrollertop"><i class="fa fa-angle-double-up"></i></a>
+						</div> -->
+
+		<div class="scroll-to-top" >
+    <a href="#" class="bstore-scrollertop" style="background-color: transparent;">
+        <img src="./img/scroll.png" alt="Scroll to Top" class="scroll-top-icon">
+    </a>
+</div>
 		<!-- FOOTER-TOP-AREA END -->
 		<!-- COPYRIGHT-AREA START -->
-		<footer class="copyright-area">
+		<!-- <footer class="copyright-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -175,5 +187,5 @@
 					</div>
 				</div>
 			</div>
-		</footer> 
+		</footer>  -->
 		<!-- COPYRIGHT-AREA END -->

@@ -18,9 +18,9 @@
           where nv_ma = ".$nvid."";
 
     if ($conn->query($sql) == true){
-        $message = "Cập nhật thông tin thành công. Vui lòng đăng nhập lại!";
+        $message = "Cập nhật thông tin thành công!";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        header('Refresh: 0;url=sign-in.php');
+        header('Refresh: 0;url=profile.php');
     }
 
 ?>

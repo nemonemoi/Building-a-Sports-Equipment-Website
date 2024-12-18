@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -36,61 +23,34 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show   bg-gray-100">
-<div class="min-height-300 bg-primary position-absolute w-100"></div>
-
 <?php
-    $active = 'nv'; 
+    $active='nv';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #FFC125;">
 
-  <main class="main-content position-relative border-radius-lg ">
+<!-- <div class="min-height-300 bg-primary position-absolute w-100"></div> -->
+
+
+
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Sửa thông tin nhân viên</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Trang</a></li>
+            <li class="breadcrumb-item text-sm"><a href="staff.php" class="text-dark">Nhân viên</li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Sửa thông tin nhân viên</h6>
+          <h6 class="font-weight-bolder text-dark mb-0">Sửa thông tin nhân viên</h6>
         </nav>
         <!-- Đoạn này -->
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here..."> -->
-            </div>
-          </div>
-          <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-white text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-white mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-white font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul>
+              
+          <?php require 'nav.php'; ?> <!-- avt ở trên -->
         </div>
       </div>
     </nav>
@@ -126,7 +86,7 @@
 
       ?>
         <div class="col-12">
-          <div class="card mb-4">
+          <div class="card mb-4" style="margin-left: 25px; margin-top: -20px;">
             <div class="card-header pb-0">
               <h4>Sửa thông tin nhân viên có mã #<?php echo $nvid; ?></h4>
             </div>
@@ -186,15 +146,15 @@
                                 if($tkvaitro=='1'){
                                     ?>Quản lý<?php
                                 } else if($tkvaitro=='2'){
-                                    ?>Nhân viên bán hàng<?php
+                                    ?>Nhân viên duyệt đơn<?php
                                 } else {
                                     ?> Nhân viên kế toán <?php
                                 }
                             ?>
                           </option>
                           <option value="1">Quản lý</option>
-                          <option value="2">Nhân viên bán hàng</option>
-                          <option value="3">Nhân viên kế toán</option>
+                          <option value="2">Nhân viên duyệt đơn</option>
+                          <!-- <option value="3">Nhân viên kế toán</option> -->
                         </select>
                       </div>
                       <div class="mb-3 px-3 col-3">
@@ -213,14 +173,14 @@
                     <div class="col-12 card-header pb-2 d-flex align-items-center">
                       <div class="mb-3 px-3 col-3"></div>
                       <div class="mb-3 px-3 col-3">
-                          Tải ảnh đại diện:
+                          <!-- Tải ảnh đại diện:
                           <br>
                           <input class="mt-3" type="file" name="staffImg" id="staffImg" accept="image/*">
                           <input type="hidden" name="old_staffImg" value="<?php echo $tkavt;?>" accept="image/*">
                       </div>
                       <div class="mb-3 px-3 col-3">
                           <div id="preview">
-                            <img id="old_img" src="../assets/img/staff_img/<?php echo $tkavt;?>" class="rounded-circle avatar avatar-xxl ms-4" alt="">
+                            <img id="old_img" src="../assets/img/staff_img/macdinh.jpg<?php echo $tkavt;?>" class="rounded-circle avatar avatar-xxl ms-4" alt="">
                           </div>
                           <script>
                             var input = document.getElementById("staffImg");
@@ -245,6 +205,39 @@
                                 reader.readAsDataURL(file); // read file as data url
                               }
                             });
+                          </script> -->
+                           Tải ảnh đại diện:
+                          <br>
+                          <input class="mt-3" type="file" name="staffImg" id="staffImg" accept="image/*">
+                          <input type="hidden" name="old_staffImg" value="<?php echo $tkavt;?>" accept="image/*">
+                      </div>
+                      <div class="mb-3 px-3 col-4">
+                          <div class="ms-4" id="preview">
+                            <img id="old_img" src="../assets/img/staff_img/<?php echo $tkavt;?>" class="rounded-circle avatar avatar-xxl ms-4" alt="">
+                          </div>
+                          <script>
+                            var input = document.getElementById("staffImg");
+                            var preview = document.getElementById("preview");
+                            var old_img = document.getElementById("old_img");
+
+                            input.addEventListener("change", function() {
+                              preview.innerHTML = ""; // clear previous preview
+                              old_img.innerHTML = "";
+                              var files = this.files;
+                              for (var i = 0; i < files.length; i++) {
+                                var file = files[i];
+                                if (!file.type.startsWith("image/")){ continue } // skip non-image files
+                                var reader = new FileReader();
+                                reader.onload = function(e) {
+                                  var img = document.createElement("img");
+                                  img.src = e.target.result;
+                                  img.width = 300; // set width for preview images
+                                  img.className = "rounded-circle avatar avatar-xxl ms-4";
+                                  preview.appendChild(img); // append image to preview div
+                                };
+                                reader.readAsDataURL(file); // read file as data url
+                              }
+                            });
                           </script>
                       </div>
                       <div class="mb-3 px-3 col-3"></div>
@@ -255,8 +248,9 @@
                       <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div> -->
                     <div class="text-center px-3">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Cập nhật</button>
-                    </div>
+                      <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-lg btn-warning text-dark text-bold btn-lg w-100 mt-4 mb-0"><strong>Cập nhật</strong></button>
+                    </div><br>
                 </form>
             </div>
           </div>
@@ -266,7 +260,7 @@
       
 
       </div>
-      <footer class="footer pt-3  ">
+      <!-- <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -297,25 +291,9 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
-  <!-- </main>
-  <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a>
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3 ">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">Argon Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i class="fa fa-close"></i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
+  
       </div>
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0 overflow-auto">

@@ -26,17 +26,14 @@
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-  <!-- Nguyên đoạn này -->
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-  <?php
-    $active = 'dvc'; 
+<?php
+    $active='dvc';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #2E8B57;">
 
-  <main class="main-content position-relative border-radius-lg ">
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">

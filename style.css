@@ -3881,6 +3881,7 @@ div.create-new-account .form-content p{
 }
 .forget-password p{
 	margin:10px 0 4px;
+	color: black;
 }
 div.registered-account .primary-form-group input{
 	max-width:271px;

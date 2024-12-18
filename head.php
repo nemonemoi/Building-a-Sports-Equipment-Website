@@ -1,12 +1,49 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
+
+
+<?php
+require 'connect.php';                       
+?>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .custom-cursor {
+    
+    width: 40px;
+    height: 40px;
+    background: url('../img/icon.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-5%, 15%); /* Dịch chuyển icon xuống dưới con trỏ */
+    transition: transform 0.1s ease-out;
+    }
+    </style>
+    <div class="custom-cursor"></div>
     <!-- Favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="icon" href="../img/icon.png" type="image/x-icon/">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
     <!-- FONTS
 		============================================ -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -61,4 +98,14 @@
     <!-- MODERNIZR JS 
 		============================================ -->
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script>
+        // Lấy phần tử custom-cursor
+        const cursor = document.querySelector('.custom-cursor');
+
+        // Thêm sự kiện di chuyển chuột
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+    </script>
 </head>

@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +22,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <title>
-    Trang quản lý Smartphone Store
+    Trang quản lý Sport Store
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -47,118 +34,93 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+
 </head>
-<body class="g-sidenav-show  bg-gray-100">
-  <!-- Nguyên đoạn này -->
-  <!-- backgroud -->
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-  
-  <!-- dark sidebar -->
-  <!-- <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ps ps--active-y bg-default " id="sidenav-main">  -->
-  
-  <!-- white sidebar -->
-  <?php
-    $active = 'db'; 
+<?php
+    $active='hd';
     require 'aside.php';
   ?>
-  
-  <main class="main-content position-relative border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <!-- <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.php">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tổng quan</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Tổng quan</h6>
-        </nav> -->
-        <!-- <div class="position-absolute mt-5 z-index-2" style="left: 30%; font-family: 'Montserrat', sans-serif; text-shadow: 0px 0px 7px #000000;"> -->
-        <!-- <div class="mt-5 text-center" style="font-family: 'Montserrat', sans-serif; text-shadow: 5px 5px 10px #000000;"> -->
-          <h3  class="text-black mt-5 text-center" style="font-family: 'Montserrat', sans-serif; text-shadow: 5px 5px 10px #000000;">
-            CỬA HÀNG ĐIỆN THOẠI BRIGHT MOBILE
-          </h3>
-        <!-- </div>   -->
-        <!-- </div> -->
-        <!-- Đoạn này -->
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div> -->
-         
-          <!-- <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape text-center rounded-circle">
-              <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-info text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-dark mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-dark font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul> -->
-          <?php require 'nav.php'; ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #FF8C00;">
+  <style>
+    .ps__thumb-x {
+    display: none !important;
+}
+    .ps__rail-x {
+    display: none !important;
+}
+    .page-title {
+      text-align: center; /* Căn giữa */
+      font-size: 2em; /* Kích thước chữ lớn */
+      font-family: 'Helvetica'; /* Font chữ dễ đọc */
+      color: black; /* Màu chữ tối hơn */
+      font-weight: bold; /* In đậm */
+      margin-top: 50px; /* Khoảng cách trên */
+    }
+  </style>
+<body class="g-sidenav-show " style="background-color: #FFA54F;">
+ 
+ 
+           <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
+     <h1 class="page-title">QUẢN LÝ CỬA HÀNG DỤNG CỤ THỂ THAO</h1>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4" style="margin-left: 140px">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
+          <div class="card" style="min-height: 140px; display: flex;">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <?php
-                      $thang = date('m');
-                      $nam = date('Y');
-                      $sql = "select 
-                                  sum(case 
-                                          when month(HD_NGAYLAP) = month(now()) and year(HD_NGAYLAP) = year(now()) and (TT_MA = 3) then hd_tongtien 
-                                          else 0 
-                                      end) as doanh_thu_thang_hien_tai, 
-                                  sum(case 
-                                          when month(HD_NGAYLAP) = month(date_sub(now(), interval 1 month)) and year(HD_NGAYLAP) = year(now()) and (TT_MA = 3) then HD_TONGTIEN 
-                                          else 0 
-                                      end) as doanh_thu_thang_truoc
-                              from hoa_don;
-                              ";
-                      $rs = $conn->query($sql);
-                      $row = mysqli_fetch_assoc($rs);
-                      if ($row["doanh_thu_thang_hien_tai"] != null){
-                        $message = "1";
-                        $tongdoanhthu = $row["doanh_thu_thang_hien_tai"];
-                        $dt_thangtruoc = $row["doanh_thu_thang_truoc"];
-                      }else {
-                        $tongdoanhthu = 0;
-                        $dt_thangtruoc = 0;
-                      }
-                    ?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Doanh thu tháng <?php echo $thang ."/". $nam ?></p>
-                    <!-- <h4 class="font-weight-bolder">
-                      <?php echo number_format($tongdoanhthu); ?> VND
-                    </h4> -->
+                  <?php
+  // Khởi tạo tháng và năm hiện tại
+  $thang = date('m');
+  $nam = date('Y');
+  
+  // Kiểm tra kết nối và chuẩn bị câu truy vấn
+  if ($conn) {
+      // Truy vấn tất cả doanh thu với điều kiện TT_MA = 3
+      $sql = "SELECT HD_TONGTIEN, HD_NGAYLAP FROM hoa_don WHERE TT_MA = 3";
+      
+      $rs = $conn->query($sql);
+
+      // Kiểm tra kết quả của truy vấn
+      if ($rs) {
+          $tongdoanhthu = 0; // Khởi tạo biến tổng doanh thu
+          
+          // Duyệt qua từng dòng kết quả
+          while ($row = $rs->fetch_assoc()) {
+              // Chuyển đổi HD_NGAYLAP thành kiểu ngày để so sánh
+              $ngayLap = date_create($row['HD_NGAYLAP']);
+              $month = date_format($ngayLap, 'm');
+              $year = date_format($ngayLap, 'Y');
+              
+              // Kiểm tra nếu tháng và năm của HD_NGAYLAP trùng với tháng và năm hiện tại
+              if ($month == $thang && $year == $nam) {
+                  // Cộng dồn doanh thu vào $tongdoanhthu
+                  $tongdoanhthu += $row['HD_TONGTIEN'];
+              }
+          }
+      } else {
+          echo "Lỗi truy vấn: " . $conn->error;
+          $tongdoanhthu = 0;
+      }
+  } else {
+      echo "Lỗi kết nối: Không thể kết nối đến cơ sở dữ liệu.";
+      $tongdoanhthu = 0;
+  }
+?>
+
+<!-- Hiển thị doanh thu -->
+<p class="text-sm mb-0 text-uppercase font-weight-bold">Doanh thu tháng <?php echo $thang . "/" . $nam ?></p>
+<h4 class="font-weight-bolder">
+  <?php echo number_format($tongdoanhthu); ?> VND
+</h4>
+                  
                   </div>
                 </div>
                 <div class="col-3 text-end">
@@ -166,33 +128,14 @@
                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
-                <h4 class="font-weight-bolder">
-                  <?php echo number_format($tongdoanhthu); ?> VND
-                </h4>
-                <?php
-                      if($dt_thangtruoc<$tongdoanhthu){
-                        $perc = round(($dt_thangtruoc / $tongdoanhthu)*100, 2);
-                        ?>                        
-                        <p class="mb-0">
-                          <span class="text-success text-sm font-weight-bolder">+<?php echo $perc ?>% </span>so với tháng trước
-                        </p>
-                        <?php
-                      } else {
-                        $dt = ($tongdoanhthu / $dt_thangtruoc)*100;
-                        $perc = round($dt, 2);
-                        ?>                        
-                        <p class="mb-0">
-                          <span class="text-danger text-sm font-weight-bolder">-<?php echo $perc ?>% </span>so với tháng trước
-                        </p>
-                        <?php
-                      }
-                    ?>
+               
+                
               </div>
             </div>
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
+          <div class="card" style="min-height: 140px; display: flex;">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
@@ -231,7 +174,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
+            <div class="card" style="min-height: 140px; display: flex;">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
@@ -268,37 +211,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <?php
-                      $sql_nv = "select count(NV_MA) as countnv, count(case when month(NV_NGAYTUYEN) = month(sysdate()) then 1 end) as trongthang from nhan_vien";
-                      $rs_nv = $conn->query($sql_nv);
-                      if ($rs_nv->num_rows > 0){
-                        $row_nv = mysqli_fetch_assoc($rs_nv);
-                        $countnv = $row_nv["countnv"];
-                        $tuyen_trong_thang = $row_nv["trongthang"];
-                      } else {
-                        $countnv = 0;
-                        $tuyen_trong_thang = 0;
-                      }
-                    ?>
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Tổng số nhân viên</p>
-                    <h4 class="font-weight-bolder">
-                      <?php echo $countnv ?>
-                    </h4>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+<?php echo $tuyen_trong_thang ?></span> trong tháng
-                    </p>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-warning shadow-warning text-center border-radius-xl">
-                    <i class="fas fa-users text-lg opacity-10"></i>
-                  </div>
+        
+                
                   <!-- <img style="height:55px;" src="https://img.icons8.com/3d-fluency/94/null/manager.png"/> -->
                 </div>
               </div>
@@ -307,333 +221,128 @@
         </div>
       </div>
       <div class="row mt-4">
-        <div class="col-lg-8 mb-lg-0 mb-4">
-          <div class="card z-index-2 h-100">
-            <div class="card-header col-12 pb-0 pt-3 bg-transparent">
-                <?php
-                  // Đoạn này tính doanh thu 12 tháng
-                  if(isset($_GET["year"])){
-                    $y = $_GET["year"];
-                    $sql = "SELECT MONTH(HD_NGAYLAP) AS THANG, SUM(HD_TONGTIEN) AS DOANH_THU 
-                            FROM HOA_DON 
-                            WHERE TT_MA = 3 AND YEAR(HD_NGAYLAP)={$y}
-                            GROUP BY THANG";
-                    $result = mysqli_query($conn, $sql);
-                    // Lấy dữ liệu từ kết quả truy vấn
-                    $data = array();
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $data[] = $row;
-                    } 
-                    // Khởi tạo mảng các biến tháng
-                      $thang_1 = 0;
-                      $thang_2 = 0;
-                      $thang_3 = 0;
-                      $thang_4 = 0;
-                      $thang_5 = 0;
-                      $thang_6 = 0;
-                      $thang_7 = 0;
-                      $thang_8 = 0;
-                      $thang_9 = 0;
-                      $thang_10 = 0;
-                      $thang_11 = 0;
-                      $thang_12 = 0;
-
-                      $tongdt=0;
-                      // Duyệt qua các phần tử của mảng kết quả
-                      foreach ($data as $row) {
-                          // Lấy giá trị của cột THANG
-                          $thang = $row['THANG'];
-
-                          // Lấy giá trị của cột DOANH_THU
-                          $doanh_thu = $row['DOANH_THU'];
-
-                          //Tính tổng doanh thu năm
-                          $tongdt += $doanh_thu;
-
-                          // Gán giá trị của cột DOANH_THU vào biến tháng tương ứng
-                          switch ($thang) {
-                              case 1:
-                                  $thang_1 = $doanh_thu;
-                                  break;
-                              case 2:
-                                  $thang_2 = $doanh_thu;
-                                  break;
-                              case 3:
-                                  $thang_3 = $doanh_thu;
-                                  break;
-                              case 4:
-                                  $thang_4 = $doanh_thu;
-                                  break;
-                              case 5:
-                                  $thang_5 = $doanh_thu;
-                                  break;
-                              case 6:
-                                  $thang_6 = $doanh_thu;
-                                  break;
-                              case 7:
-                                  $thang_7 = $doanh_thu;
-                                  break;
-                              case 8:
-                                  $thang_8 = $doanh_thu;
-                                  break;
-                              case 9:
-                                  $thang_9 = $doanh_thu;
-                                  break;
-                              case 10:
-                                  $thang_10 = $doanh_thu;
-                                  break;
-                              case 11:
-                                  $thang_11 = $doanh_thu;
-                                  break;
-                              case 12:
-                                  $thang_12 = $doanh_thu;
-                                  break;
-                          }
-                      }
-
-                      // Tạo mảng chứa các giá trị của các biến
-                      $data_month = array(
-                        'thang_1' => $thang_1,
-                        'thang_2' => $thang_2,
-                        'thang_3' => $thang_3,
-                        'thang_4' => $thang_4,
-                        'thang_5' => $thang_5,
-                        'thang_6' => $thang_6,
-                        'thang_7' => $thang_7,
-                        'thang_8' => $thang_8,
-                        'thang_9' => $thang_9,
-                        'thang_10' => $thang_10,
-                        'thang_11' => $thang_11,
-                        'thang_12' => $thang_12
-                      );
-                      // Chuyển đổi mảng thành đối tượng JSON
-                      $json_data = json_encode($data_month);
-                    ?>
-                      <div id="myDataMonth" data-json='<?php echo $json_data; ?>'></div>
-                      <script>
-                        var div = document.querySelector(".chart-here");
-                        var dtnam = document.querySelector(".doanhthunam")
-                        div.innerHTML = "<canvas id=\"myChart-y\" height=\"80%\" class=\"chart-canvas\"></canvas>";
-                      </script>
-                    <?php
-                  } else {
-                    $sql = "SELECT MONTH(HD_NGAYLAP) AS THANG, SUM(HD_TONGTIEN) AS DOANH_THU 
-                            FROM HOA_DON 
-                            WHERE TT_MA = 3 AND YEAR(HD_NGAYLAP)=2023
-                            GROUP BY THANG";
-                    $result = mysqli_query($conn, $sql);
-                    // Lấy dữ liệu từ kết quả truy vấn
-                    $data = array();
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $data[] = $row;
-                    } 
-                    // Khởi tạo mảng các biến tháng
-                      $thang_1 = 0;
-                      $thang_2 = 0;
-                      $thang_3 = 0;
-                      $thang_4 = 0;
-                      $thang_5 = 0;
-                      $thang_6 = 0;
-                      $thang_7 = 0;
-                      $thang_8 = 0;
-                      $thang_9 = 0;
-                      $thang_10 = 0;
-                      $thang_11 = 0;
-                      $thang_12 = 0;
-
-                      // Duyệt qua các phần tử của mảng kết quả
-                      $tongdt = 0;
-                      foreach ($data as $row) {
-                        // Lấy giá trị của cột THANG
-                        $thang = $row['THANG'];
-                        
-                        // Lấy giá trị của cột DOANH_THU
-                        $doanh_thu = $row['DOANH_THU'];
-                        
-                        //Tính tổng doanh thu năm
-                        $tongdt += $doanh_thu;
-
-                          // Gán giá trị của cột DOANH_THU vào biến tháng tương ứng
-                          switch ($thang) {
-                              case 1:
-                                  $thang_1 = $doanh_thu;
-                                  break;
-                              case 2:
-                                  $thang_2 = $doanh_thu;
-                                  break;
-                              case 3:
-                                  $thang_3 = $doanh_thu;
-                                  break;
-                              case 4:
-                                  $thang_4 = $doanh_thu;
-                                  break;
-                              case 5:
-                                  $thang_5 = $doanh_thu;
-                                  break;
-                              case 6:
-                                  $thang_6 = $doanh_thu;
-                                  break;
-                              case 7:
-                                  $thang_7 = $doanh_thu;
-                                  break;
-                              case 8:
-                                  $thang_8 = $doanh_thu;
-                                  break;
-                              case 9:
-                                  $thang_9 = $doanh_thu;
-                                  break;
-                              case 10:
-                                  $thang_10 = $doanh_thu;
-                                  break;
-                              case 11:
-                                  $thang_11 = $doanh_thu;
-                                  break;
-                              case 12:
-                                  $thang_12 = $doanh_thu;
-                                  break;
-                          }
-                      }
-
-                      // Tạo mảng chứa các giá trị của các biến
-                      $data_month = array(
-                        'thang_1' => $thang_1,
-                        'thang_2' => $thang_2,
-                        'thang_3' => $thang_3,
-                        'thang_4' => $thang_4,
-                        'thang_5' => $thang_5,
-                        'thang_6' => $thang_6,
-                        'thang_7' => $thang_7,
-                        'thang_8' => $thang_8,
-                        'thang_9' => $thang_9,
-                        'thang_10' => $thang_10,
-                        'thang_11' => $thang_11,
-                        'thang_12' => $thang_12
-                      );
-                      // Chuyển đổi mảng thành đối tượng JSON
-                      $json_data = json_encode($data_month);
-                    ?>
-                      <div id="myDataMonth" data-json='<?php echo $json_data; ?>'></div>
-                      <script>
-                        var div = document.querySelector(".chart-here");
-                        div.innerHTML = "<canvas id=\"myChart-y\" height=\"80%\" class=\"chart-canvas\"></canvas>";
-                      </script>
-                    <?php
-                  }
-                ?>
-              <div class="row">
-                <div class="col-lg-2">
-                  <div class="doanhthunam mt-1">
-                    <h5 class="text-capitalize">Doanh thu</h5>
-                  </div>
-                  <!-- <p class="text-sm mb-0">
-                    <i class="fa fa-arrow-up text-success"></i>
-                    <span class="font-weight-bold">4% more</span> in 2021
-                  </p> -->
-                </div>
-                <div class="col-lg-4">
-                  <form action="#" method="get">
-                    <?php
-                      if (isset($_GET["year"])){
-                        $year = $_GET["year"];
-                      } else {
-                        $year = "- Năm -";
-                      }
-                    ?>
-                    <div class="row">
-                      <div class="col-8">
-                        <select class="form-control form-control-md" name="year" id="year">
-                          <option value="" selected disabled hidden><?php echo $year; ?></option>
-                          <option value="2022">2022</option>
-                          <option value="2023">2023</option>
-                          <option value="2024">2024</option>
-                        </select>
-                      </div>
-                      <div class="col-1">
-                        <button type="submit" class="btn btn-primary text-white font-weight-bold text-md">
-                          Lọc
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="col-lg-6 d-flex text-end align-items-center justify-content-end mt-n4 ">
-                  <span>Tổng doanh thu: </span><h5 class="text-success ms-2 mt-1"><?php echo number_format($tongdt, 0) ?> VNĐ</h5>
-                </div>
-              </div>
+  <div class="col-lg-12 mb-lg-0 mb-4">
+    <div class="card z-index-2 h-100" style="margin-left: 20px;">
+      <!-- Card Header -->
+      <div class="card-header pb-0 pt-3 bg-transparent">
+        <form action="#" method="get">
+          <div class="row">
+            <div class="col-4">
+              <label for="start_date">Từ ngày:</label>
+              <input type="date" class="form-control" name="start_date" id="start_date" value="<?php echo isset($_GET['start_date']) ? $_GET['start_date'] : ''; ?>" required>
+              <!-- <input type="date" class="form-control" name="start_date" id="start_date" required> -->
             </div>
-            <div class="card-body p-3">
-              <div class="chart mt-n2"> 
-                <style>
-                  canvas {
-                    -moz-user-select: none;
-                    -webkit-user-select: none;
-                    -ms-user-select: none;
-                  }
-
-                  canvas .bar{
-                    width: 50px;
-                  }
-
-                </style>
-                <div class="chart_here">
-                  <canvas id="myChart-y" height="80%" class="chart-canvas"></canvas>
-                  <!-- <canvas id="chart-line" class="chart-canvas" height="300"></canvas> -->
-                </div>
-                <!-- <div class="d-flex text-center align-items-center justify-content-center mt-3">
-                  <span>Tổng doanh thu: </span><h4 class="text-success ms-2 mt-1"><?php echo number_format($tongdt, 0) ?> VNĐ</h4>
-                </div> -->
-                
-              </div>
+            <div class="col-4">
+              <label for="end_date">Đến ngày:</label>
+              <input type="date" class="form-control" name="end_date" id="end_date" value="<?php echo isset($_GET['end_date']) ? $_GET['end_date'] : ''; ?>" required>
+              <!-- <input type="date" class="form-control" name="end_date" id="end_date" required> -->
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card card-carousel overflow-hidden h-100 p-0">
-            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-              <div class="carousel-inner border-radius-lg h-100">
-                <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carousel-1.jpg');background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Get started with Argon</h5>
-                    <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
-                  </div>
-                </div>
-                <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-2.jpg'); background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Faster way to create web pages</h5>
-                    <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-                  </div>
-                </div>
-                <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-3.jpg');background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-trophy text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                    <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+            <div class="col-2 d-flex align-items-end">
+              <button style="margin-top: 30px; background-color: orange" type="submit" class="btn  text-white font-weight-bold text-md">
+                Lọc
               </button>
             </div>
           </div>
+        </form>
+        <?php
+$tongdt = 0; // Tổng doanh thu mặc định là 0
+$json_data = json_encode(array_fill(1, 12, 0)); // Mảng doanh thu ban đầu trống
+
+if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
+    $start_date = $_GET['start_date'];
+    $end_date = $_GET['end_date'];
+
+    // Truy vấn dữ liệu từ cơ sở dữ liệu
+    $sql = "SELECT MONTH(HD_NGAYLAP) AS THANG, SUM(HD_TONGTIEN) AS DOANH_THU 
+            FROM HOA_DON 
+            WHERE TT_MA = 3 AND HD_NGAYLAP BETWEEN '{$start_date}' AND '{$end_date}'
+            GROUP BY THANG";
+    $result = mysqli_query($conn, $sql);
+
+    // Kiểm tra kết quả truy vấn
+    if ($result) {
+        $months = array_fill(1, 12, 0); // Mảng dữ liệu doanh thu theo tháng
+        while ($row = mysqli_fetch_assoc($result)) {
+            $months[$row['THANG']] = $row['DOANH_THU']; // Cập nhật doanh thu từng tháng
+            $tongdt += $row['DOANH_THU']; // Cộng dồn tổng doanh thu
+        }
+        $json_data = json_encode($months); // Chuyển đổi mảng doanh thu thành JSON
+    } else {
+        echo "<p class='text-danger'>Không thể truy vấn dữ liệu. Lỗi: " . mysqli_error($conn) . "</p>";
+    }
+}
+?>
+
+    <div id="myDataMonth" data-json='<?php echo $json_data; ?>'></div>
+    <script>
+        var div = document.querySelector(".chart-here");
+        div.innerHTML = "<canvas id=\"myChart-y\" height=\"80%\" class=\"chart-canvas\"></canvas>";
+    </script>
+
+        
+
+      <!-- Card Body -->
+      <div class="card-body p-3">
+        <div class="chart-here">
+          <!-- Biểu đồ sẽ hiển thị ở đây -->
+          <canvas id="myChart-y" style="height: 350px; width: 100%;"></canvas>
         </div>
       </div>
+<div class="col-lg-12 d-flex flex-column align-items-center justify-content-center mt-4">
+  <span class="fw-bold">Tổng doanh thu:</span>
+  <h5 class="text-success mt-2"><?php echo number_format($tongdt, 0); ?> VNĐ</h5>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+  .card-body .col-lg-12 {
+    text-align: center; /* Căn giữa text */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top: -10px; /* Đẩy phần tử lên trên một chút */
+  }
+
+  .card-body .col-lg-12 span {
+    margin-bottom: -40px; /* Khoảng cách giữa dòng chữ và tổng doanh thu */
+  }
+
+  .card-body .col-lg-12 h5 {
+    margin: 0; /* Xóa margin thừa */
+  }
+
+
+
+  .chart-here {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px; /* Chiều cao cho biểu đồ */
+    overflow: hidden; /* Đảm bảo không bị tràn */
+  }
+
+  .chart-here canvas {
+    max-width: 100%; /* Đảm bảo canvas không tràn */
+    max-height: 100%;
+  }
+</style>
+
+
+
+              
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- banner trong dashboard -->
       <!-- thong ke don hang theo loai -->
       <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
+        <div class="col-lg-6 mb-lg-0 mb-4" style="margin-left: 50px;">
           <div class="card ">
             <div class="card-header pb-0 p-3">
               <div class="d-flex justify-content-between">
@@ -708,11 +417,11 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div class="icon icon-shape bg-gradient-primary shadow-warning text-center rounded-circle">
-                        <i class="fa-brands fa-android"></i>
+                        <i class="fa-brands fa-superpowers"></i>
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Loại:</p>
-                          <h6 class="text-sm mb-0">ANDROID</h6>
+                          <h6 class="text-sm mb-0">Bóng</h6>
                         </div>
                       </div>
                     </td>
@@ -733,11 +442,11 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div class="icon icon-shape bg-gradient-success shadow-warning text-center rounded-circle">
-                        <i class="fa-brands fa-apple"></i>
+                        <i class="fa-brands fa-grav"></i>
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Loại:</p>
-                          <h6 class="text-sm mb-0">iPHONE (IOS)</h6>
+                          <h6 class="text-sm mb-0">Phụ kiện thể thao</h6>
                         </div>
                       </div>
                     </td>
@@ -758,11 +467,11 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                        <i class="fa-thin fa-mobile-retro"></i>
+                        <i class="fa-brands fa-deviantart"></i>
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Loại:</p>
-                          <h6 class="text-sm mb-0">ĐIỆN THOẠI THÔNG DỤNG</h6>
+                          <h6 class="text-sm mb-0">Dụng cụ thể thao</h6>
                         </div>
                       </div>
                     </td>
@@ -895,38 +604,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </main>
   
@@ -977,50 +655,38 @@
     });
   </script>
   <!-- chart by year -->
-  <script>
-    // Lấy đối tượng JSON từ thuộc tính dữ liệu của phần tử div
-    var data = JSON.parse(document.getElementById("myDataMonth").getAttribute("data-json"));
-    var thang_1 = data.thang_1;
-    var thang_2 = data.thang_2;
-    var thang_3 = data.thang_3;
-    var thang_4 = data.thang_4;
-    var thang_5 = data.thang_5;
-    var thang_6 = data.thang_6;
-    var thang_7 = data.thang_7;
-    var thang_8 = data.thang_8;
-    var thang_9 = data.thang_9;
-    var thang_10 = data.thang_10;
-    var thang_11 = data.thang_11;
-    var thang_12 = data.thang_12;
-    var year = document.getElementById('slyear')
-    var ctx = document.getElementById('myChart-y').getContext('2d');
-    var chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
-        datasets: [{
-          label: 'Doanh thu',
-          data: [thang_1, thang_2, thang_3, thang_4, thang_5, thang_6, thang_7, thang_8, thang_9, thang_10 ,thang_11, thang_12],
-          
-          backgroundColor: 'rgba(0, 128, 255, 0.6)',
-          borderColor: 'rgba(0, 128, 255, 0.6)',
-          borderWidth: 3,
-          borderRadius: 5,
-          lineTension: 0.4, //độ cong
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero:true
+  
+<script>
+    const jsonData = document.getElementById('myDataMonth').getAttribute('data-json');
+    const revenueData = JSON.parse(jsonData);
+
+    const labels = Object.keys(revenueData).map(month => `Tháng ${month}`);
+    const data = Object.values(revenueData);
+
+    const ctx = document.getElementById('myChart-y').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Doanh thu',
+                data: data,
+                backgroundColor: "rgba(255, 165, 0, 0.5)", // Màu cam nhạt
+      borderColor: "rgba(255, 165, 0, 1)", // Màu cam đậm
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-          }]
         }
-      }
     });
-    
-  </script>
+</script>
+
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
@@ -1121,5 +787,4 @@
     $conn->close();
   ?>
 </body>
-
-  </html>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>AddPage</title>
+<link type="text/css" rel="stylesheet" href="fpdf.css">
+</head>
+<body>
+<h1>AddPage</h1>
+<code>AddPage([<b>string</b> orientation ,[ <b>mixed</b> format]])</code>
+<h2>설명</h2>
+문서에 새 페이지를 추가합니다. 만약 페이지가 이미 존재한다면, 먼저 Footer() 메소드를 호출해서
+페이지 끝(푸터)을 출력해야 합니다. 페이지가 추가되고나면, 현재 위치는 새 문서의 좌측과 상단의
+여백을 둔 좌측상단에 위치하게 됩니다. 페이지 첫부분(헤더)를 출력하려면 Header() 메소드를
+호출해야 합니다.
+<BR>
+메소드를 호출하기 이전에 설정한 글꼴은 자동으로 복구되므로 같은 글꼴을 계속 사용하기 위해서
+SetFont() 메소드를 다시 호출하지 않아도 됩니다. 이는 색상과 선의 굵기에도 마찬가지로 적용됩니다.
+<BR>
+좌표계는 좌측 상단부터 아래로 갈수록 좌표값이 증가하는 일반적인 체계를 사용합니다.
+<h2>파라미터</h2>
+<dl class="param">
+<dt><code>orientation</code></dt>
+<dd>
+용지 방향. 가능한 값은 다음과 같습니다(대소문자 구분안함):
+<ul>
+<li><code>P</code> 혹은 <code>Portrait</code> (세로로 길게)</li>
+<li><code>L</code> 혹은 <code>Landscape</code> (가로로 길게)</li>
+</ul>
+기본값은 생성자에 사용된 값입니다.
+</dd>
+<dt><code>format</code></dt>
+<dd>
+용지 크기. 다음 값 중 하나를 선택할 수 있습니다(대소문자 구분안함):
+<ul>
+<li><code>A3</code></li>
+<li><code>A4</code></li>
+<li><code>A5</code></li>
+<li><code>Letter</code></li>
+<li><code>Legal</code></li>
+</ul>
+혹은 너비와 높이를 포함한 2개 원소의 배열을 사용할 수도 있습니다(사용자 측정 단위로 표현된 값).<br>
+<br>
+기본값은 생성자에 전달된 값입니다.
+</dd>
+</dl>
+<h2>참고</h2>
+<a href="fpdf.htm">FPDF()</a>,
+<a href="header.htm">Header()</a>,
+<a href="footer.htm">Footer()</a>,
+<a href="setmargins.htm">SetMargins()</a>.
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="index.htm">목차</a></div>
+</body>
+</html>

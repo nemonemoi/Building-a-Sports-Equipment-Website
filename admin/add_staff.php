@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -22,6 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>
     Thêm nhân viên mới
   </title>
@@ -36,67 +31,51 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
-
-<body class="g-sidenav-show   bg-gray-100">
-  <!-- <div class="position-absolute w-100 min-height-400 top-0" style="background-image: url('https://media-cdn-v2.laodong.vn/storage/newsportal/2022/9/21/1095693/Screen-Shot-2022-09-.jpg?w=660'); background-position-y: 100%;">
-    <span class="mask bg-primary opacity-5"></span>
-  </div> -->
-  
-  <?php
-    $active = 'tnv'; 
+<?php
+    $active='tnv';
     require 'aside.php';
   ?>
+<div class="w3-container w3-padding-large" style="margin-top: -20px; margin-left: 20px;"> <!-- căn lề -->
+<body class="g-sidenav-show " style="background-color: #FFC125;">
 
-  <main class="main-content position-relative border-radius-lg ">
+
+  <main class="main-content position-relative border-radius-lg " style="margin-top: -25px;">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Trang</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Thêm nhân viên</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Thêm nhân viên</h6>
-        </nav>
-        <!-- Đoạn này -->
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5" style="display: flex; flex-wrap: nowrap;">
+          <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-dark" href="dashboard.php">Trang</a>
+            </li>
+            <li class="breadcrumb-item text-sm"><a href="staff.php" class="text-dark">Nhân viên</li>
+        </ol>
+        <h6 class="font-weight-bolder text-dark mb-0">Thêm nhân viên</h6>
+    </nav>
+</div>
+
+       <!-- Đoạn này -->
+        <div style="margin-left: -300px; margin-top: 20px !important;" class="mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here..."> -->
+              
             </div>
           </div>
-          <!-- <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center mb-4 me-4">
-              <div class="icon icon-shape text-center rounded-circle">
-                <img src="../assets/img/staff_img/<?php echo $_SESSION["avt"]; ?>" class="rounded-circle avatar avatar-xl" alt='user'>
-              </div>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-sm-1 ms-3">
-             <nav class=" mt-sm-1" aria-label="breadcrumb">   
-                <h7 class="text-white text mb-0">Xin chào,</h7>
-                <h6 class="font-weight-bolder text-white mt-n1"><?php echo $_SESSION["name"]; ?></h6>      
-                <a href="log_out.php" class="btn btn-outline-light text-white font-weight-bold px-2 mt-n1 py-1">
-                  <span class="d-sm-inline d-none me-sm-1">Đăng xuất</span>
-                  <i class="fas fa-sign-out-alt "></i>
-                </a>
-              </nav>
-            </li> 
-            
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul> -->
+  
           <?php require 'nav.php'; ?>
         </div>
+
       </div>
     </nav>
+    <style>
+    .ps__thumb-x {
+    display: none !important;
+}
+    .ps__rail-x {
+    display: none !important;
+}
+</style>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
     <div class="row">
@@ -104,7 +83,7 @@
       require 'connect.php';
     ?>
         <div class="col-12">
-          <div class="card mb-4">
+          <div class="card mb-4" style="margin-left: 25px; margin-top: -20px;">
             <div class="card-header pb-0">
               <h4>Thêm nhân viên mới</h4>
             </div>
@@ -150,8 +129,8 @@
                         <select class="form-control form-control-lg" name="staff_vaitro" id="staff_vaitro">
                           <option value="" selected disabled hidden>-Chọn-</option>
                           <option value="1">Quản lý</option>
-                          <option value="2">Nhân viên bán hàng</option>
-                          <option value="3">Nhân viên kế toán</option>
+                          <option value="2">Nhân viên duyệt đơn</option>
+                          <!-- <option value="3">Nhân viên kế toán</option> -->
                         </select>
                       </div>
                       <div class="mb-3 px-3 col-3">
@@ -207,8 +186,8 @@
                       <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div> -->
                     <div class="text-center px-3">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Thêm</button>
-                    </div>
+                      <button type="submit" class="btn btn-lg btn-warning btn-lg w-100 mt-4 mb-0"><strong>Thêm</strong></button>
+                    </div><br>
                 </form>
             </div>
           </div>
